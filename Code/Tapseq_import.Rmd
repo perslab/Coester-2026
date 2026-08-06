@@ -1,0 +1,569 @@
+---
+title: "Retro_AAV_4plex"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(Seurat)
+library(patchwork)
+library(data.table)
+#library(magrittr)
+library(remotes)
+library(corrplot)
+library(Matrix)
+library(gprofiler2)
+library(ggpubr)
+library(devtools)
+library(glmnet)
+library(readxl)
+```
+
+```{r}
+SCOP_rename <- function(h5_cb, ind, sun) {
+  newind <- paste0("_", ind)
+  newobj <- substr(deparse(substitute(h5_cb)), 1, 2)
+  colnames(h5_cb) <- gsub('-1',newind,colnames(h5_cb)) #SCOP pipeline changes dashes to underscores
+  print(paste0(newobj, " appended _", ind)) #check object name and appended underscore
+  
+  keep.cells <- intersect(colnames(h5_cb), colnames(sun)) #intersect cellbender and SCOP file to only keep called cells
+  h5_cb <- h5_cb[, keep.cells] #subset cellbender matrix
+  print(paste0("Cells from cellranger.h5 present in SCOP object: ", (length(keep.cells))))
+  
+  h5_cb <- CreateSeuratObject(counts = h5_cb, min.cells = 10) #Seurat object
+  
+  lane <- paste0("SI-TT-", newobj) #get lane ID by pulling object name
+  print(paste0("Cells of corresponding lane present in SCOP object: ", (sum(sun$orig.ident %in% c(lane)))))#Check number of cells with corresponding lane metadata
+  
+  lane <- paste0(lane, "_", deparse(substitute(sun))) #create unique lane identities
+  h5_cb$old.ident <- lane #add to metadata
+  hashes <- sun@meta.data #take SCOP metadata
+  h5_cb <- AddMetaData(h5_cb, hashes) #add SCOP metadata
+  
+  DefaultAssay(h5_cb) <- "RNA"
+  h5_cb <- NormalizeData(h5_cb)
+  h5_cb <- FindVariableFeatures(h5_cb, selection.method = "vst", verbose = F)
+  return(h5_cb)
+}
+
+
+SCOP_rename_cellbender <- function(h5_cb, h5_cr, ind, sun) {
+  newind <- paste0("_", ind)
+  newobj <- substr(deparse(substitute(h5_cb)), 1, 2)
+  colnames(h5_cb) <- gsub('-1',newind,colnames(h5_cb)) #SCOP pipeline changes dashes to underscores
+  colnames(h5_cr) <- gsub('-1',newind,colnames(h5_cr)) #SCOP pipeline changes dashes to underscores
+  print(paste0(newobj, " appended _", ind)) #check object name and appended underscore
+  
+  keep.cells <- intersect(colnames(h5_cb), colnames(sun)) #intersect cellbender and SCOP file to only keep called cells
+  h5_cb <- h5_cb[, keep.cells] #subset cellbender matrix
+  print(paste0("Cells from cellranger.h5 present in SCOP object: ", (length(keep.cells))))
+  
+  h5_cb <- CreateSeuratObject(counts = h5_cb, min.cells = 10) #Seurat object
+  h5_cb[['v147']] <- h5_cb@assays$RNA@counts['v147',] #Save virus counts as metadata
+  h5_cb$infected <- (h5_cb@assays$RNA@counts['v147',]>0) #Mark virus positive cells
+  print(paste0("Cells expressing v147 in CB: ", sum(h5_cb$infected)))
+  
+  lane <- paste0("SI-TT-", newobj) #get lane ID by pulling object name
+  print(paste0("Cells of corresponding lane present in SCOP object: ", (sum(sun$orig.ident %in% c(lane)))))#Check number of cells with corresponding lane metadata
+  
+  lane <- paste0(lane, "_", deparse(substitute(sun))) #create unique lane identities
+  h5_cb$old.ident <- lane #add to metadata
+  hashes <- sun@meta.data #take SCOP metadata
+  h5_cb <- AddMetaData(h5_cb, hashes) #add SCOP metadata
+  
+  keep.cells <- intersect(colnames(h5_cb), colnames(h5_cr)) #intersect filtered cellbender cells with cellranger matrix to only keep matching cells
+  print(paste0("Cells intersecting CB and CR objects: ", (length(keep.cells)))) #Check intersect
+  mat <- h5_cr[, keep.cells] #subsetting cellranger matrix
+  h5_cb[["CR"]] <- CreateAssayObject(mat, min.cells = 10) #add cellranger counts as a new assay to Seurat object
+  h5_cb[['v147_CR']] <- h5_cb@assays$CR@counts['v147',] #Save virus counts as metadata
+  h5_cb$infected_CR <- (h5_cb@assays$CR@counts['v147',]>0) #Mark virus positive cells
+  print(paste0("Cells expressing v147 in CR: ", sum(h5_cb$infected_CR)))
+  
+  DefaultAssay(h5_cb) <- "RNA"
+  h5_cb <- NormalizeData(h5_cb)
+  h5_cb <- FindVariableFeatures(h5_cb, selection.method = "vst", verbose = F)
+  return(h5_cb)
+}
+
+Intersect_test <- function(query, reference, sun, ind){
+  newobj <- substr(deparse(substitute(reference)), 1, 2)
+  lane <- paste0("SI-TT-", newobj)
+  newind <- paste0("_", ind)
+  colnames(query) <- gsub('-1',newind,colnames(query)) #SCOP pipeline changes dashes to underscores
+  colnames(reference) <- gsub('-1',newind,colnames(reference)) #SCOP pipeline changes dashes to underscores
+  print(paste0(newobj, " appended _", ind)) #check object name and appended underscore
+  
+  keep.cells <- intersect(colnames(query), colnames(reference)) 
+  print(paste0("Intersect tapseq & cellbender: ", length(keep.cells)))
+  
+  keep.cells <- intersect(colnames(query), colnames(sun)) 
+  print(paste0("Intersect tapseq & SCOP: ", length(keep.cells)))
+  
+  keep.cells <- intersect(colnames(sun), colnames(reference)) 
+  print(paste0("Intersect cellbender & SCOP: ", length(keep.cells)))
+}
+
+
+SCOP_rename_tapseq <- function(h5_cb, h5_cr, ind, sun, tapseq) {
+  newind <- paste0("_", ind)
+  newobj <- substr(deparse(substitute(h5_cb)), 1, 2)
+  colnames(h5_cb) <- gsub('-1',newind,colnames(h5_cb)) #SCOP pipeline changes dashes to underscores
+  colnames(h5_cr) <- gsub('-1',newind,colnames(h5_cr)) #SCOP pipeline changes dashes to underscores
+  colnames(tapseq) <- gsub('-1',newind,colnames(tapseq)) #SCOP pipeline changes dashes to underscores
+  print(paste0(newobj, " appended _", ind)) #check object name and appended underscore
+  
+  keep.cells <- intersect(colnames(h5_cb), colnames(sun)) #intersect cellbender and SCOP file to only keep called cells
+  h5_cb <- h5_cb[, keep.cells] #subset cellbender matrix
+  print(paste0("Cells from cellbender.h5 subset present in SCOP object: ", (length(keep.cells))))
+  keep.cells <- intersect(colnames(h5_cb), colnames(tapseq)) #intersect cellbender and SCOP file to only keep called cells
+  h5_cb <- h5_cb[, keep.cells] #subset cellbender matrix
+  print(paste0("Cells from cellbender.h5 subset present in Tapseq object: ", (length(keep.cells))))
+  
+  h5_cb <- CreateSeuratObject(counts = h5_cb, min.cells = 10) #Seurat object
+  h5_cb[['v147']] <- h5_cb@assays$RNA@counts['v147',] #Save virus counts as metadata
+  h5_cb$infected <- (h5_cb@assays$RNA@counts['v147',]>0) #Mark virus positive cells
+  print(paste0("Cells expressing v147 in Cellbender: ", sum(h5_cb$infected)))
+  
+  lane <- paste0("SI-TT-", newobj) #get lane ID by pulling object name
+  print(paste0("Cells of corresponding lane present in SCOP object: ", (sum(sun$orig.ident %in% c(lane)))))#Check number of cells with corresponding lane metadata
+  
+  lane <- paste0(lane, "_", deparse(substitute(sun))) #create unique lane identities
+  h5_cb$old.ident <- lane #add to metadata
+  hashes <- sun@meta.data #take SCOP metadata
+  h5_cb <- AddMetaData(h5_cb, hashes) #add SCOP metadata
+  
+  keep.cells <- intersect(colnames(h5_cb), colnames(h5_cr)) #intersect filtered cellbender cells with cellranger matrix to only keep matching cells
+  print(paste0("Cells intersecting Cellbender and Cellranger objects: ", (length(keep.cells)))) #Check intersect
+  mat <- h5_cr[, keep.cells] #subsetting cellranger matrix
+  h5_cb[["CR"]] <- CreateAssayObject(mat, min.cells = 10) #add cellranger counts as a new assay to Seurat object
+  h5_cb[['v147_CR']] <- h5_cb@assays$CR@counts['v147',] #Save virus counts as metadata
+  h5_cb$infected_CR <- (h5_cb@assays$CR@counts['v147',]>0) #Mark virus positive cells
+  print(paste0("Cells expressing v147 in Cellranger: ", sum(h5_cb$infected_CR)))
+  
+  keep.cells <- intersect(colnames(h5_cb), colnames(tapseq)) #intersect filtered cellbender cells with tapseq matrix to only keep matching cells
+  mat <- tapseq[, keep.cells] #subsetting tapseq matrix
+  h5_cb[["TS"]] <- CreateAssayObject(mat, min.cells = 10) #add cellranger counts as a new assay to Seurat object
+  h5_cb[['v147_TS']] <- h5_cb@assays$TS@counts['v147',] #Save virus counts as metadata
+  h5_cb$infected_TS <- (h5_cb@assays$TS@counts['v147',]>0) #Mark virus positive cells
+  print(paste0("Cells expressing v147 in Tapseq: ", sum(h5_cb$infected_TS)))
+  
+  DefaultAssay(h5_cb) <- "RNA"
+  h5_cb <- NormalizeData(h5_cb)
+  h5_cb <- FindVariableFeatures(h5_cb, selection.method = "vst", verbose = F)
+  return(h5_cb)
+}
+
+```
+
+```{r}
+#filepath <- "/projects/cbmr_shared/people/qbx224/"
+filepath <- "/Users/qbx224/Documents/RStudio/"
+sun1 <- readRDS(paste0(filepath,"4plex/2023-03-28_brain_day1-day2-day3_rna-seurat.rds"))
+sun2 <- readRDS(paste0(filepath,"4plex/2023-03-28_brain_day4_rna-seurat.rds"))
+sun3 <- readRDS(paste0(filepath,"3plex/2023-06-16_brain_day1-day2-day3_rna-seurat.rds"))
+sun4 <- readRDS(paste0(filepath,"3plex/2023-06-16_brain_day4_rna-seurat.rds"))
+```
+
+Checking Lanes, ID's etc... Adding Metadata to SCOP objects
+```{r}
+#These are metadata tables with the sorting info
+meta_4plex <- read_excel(paste0(filepath,"hashes_4plex.xlsx"))
+meta_3plex <- read_excel(paste0(filepath,"hashes_3plex.xlsx"))
+
+#Pulling sex info, and verifying by expression
+fem4 <- meta_4plex[meta_4plex$sex == "f",1] %>% pull(id)
+mal4 <- meta_4plex[meta_4plex$sex == "m",1] %>% pull(id)
+sun1$sex <- sun1$hash.mcl.ID
+sun1$sex[sun1$sex %in% fem4] <- "female"
+sun1$sex[sun1$sex %in% mal4] <- "male"
+sun2$sex <- sun2$hash.mcl.ID
+sun2$sex[sun2$sex %in% fem4] <- "female"
+sun2$sex[sun2$sex %in% mal4] <- "male"
+
+fem3 <- meta_3plex[meta_3plex$sex == "f",1] %>% pull(id)
+mal3 <- meta_3plex[meta_3plex$sex == "m",1] %>% pull(id)
+sun3$sex <- sun3$hash.mcl.ID
+sun3$sex[sun3$sex %in% fem3] <- "female"
+sun3$sex[sun3$sex %in% mal3] <- "male"
+sun4$sex <- sun4$hash.mcl.ID
+sun4$sex[sun4$sex %in% fem3] <- "female"
+sun4$sex[sun4$sex %in% mal3] <- "male"
+
+VlnPlot(sun1, features = c("Eif2s3y", "Xist"), group.by = "sex", split.by = "hash.mcl.ID")
+VlnPlot(sun2, features = c("Eif2s3y", "Xist"), group.by = "sex", split.by = "hash.mcl.ID")
+VlnPlot(sun3, features = c("Eif2s3y", "Xist"), group.by = "sex", split.by = "hash.mcl.ID")
+VlnPlot(sun4, features = c("Eif2s3y", "Xist"), group.by = "sex", split.by = "hash.mcl.ID")
+```
+
+
+
+```{r}
+#Pulling area info by ID
+pbn <- meta_4plex[meta_4plex$area == "PBN",] %>% pull(id)
+pvt <- meta_4plex[meta_4plex$area == "PVT",] %>% pull(id)
+bst <- meta_4plex[meta_4plex$area == "BST",] %>% pull(id)
+pag <- meta_4plex[meta_4plex$area == "PAG",] %>% pull(id)
+sun1$area <- sun1$hash.mcl.ID
+sun1$area[sun1$area %in% pbn] <- "PBN"
+sun1$area[sun1$area %in% pvt] <- "PVT"
+sun1$area[sun1$area %in% bst] <- "BST"
+sun1$area[sun1$area %in% pag] <- "PAG"
+
+sun2$area <- sun2$hash.mcl.ID
+sun2$area[sun2$area %in% pbn] <- "PBN"
+sun2$area[sun2$area %in% pvt] <- "PVT"
+sun2$area[sun2$area %in% bst] <- "BST"
+sun2$area[sun2$area %in% pag] <- "PAG"
+
+cea <- meta_3plex[meta_3plex$area == "CeA",] %>% pull(id)
+pvh <- meta_3plex[meta_3plex$area == "PVH",] %>% pull(id)
+lha <- meta_3plex[meta_3plex$area == "LHA",] %>% pull(id)
+
+sun3$area <- sun3$hash.mcl.ID
+sun3$area[sun3$area %in% cea] <- "CEA"
+sun3$area[sun3$area %in% pvh] <- "PVH"
+sun3$area[sun3$area %in% lha] <- "LHA"
+
+sun4$area <- sun4$hash.mcl.ID
+sun4$area[sun4$area %in% cea] <- "CEA"
+sun4$area[sun4$area %in% pvh] <- "PVH"
+sun4$area[sun4$area %in% lha] <- "LHA"
+
+DimPlot(sun1, split.by = "area")
+DimPlot(sun2, split.by = "area")
+DimPlot(sun3, split.by = "area")
+DimPlot(sun4, split.by = "area")
+
+```
+
+
+```{r}
+###############
+lane1_4 <- meta_4plex[meta_4plex$lane1 == T,] %>% pull(id)
+lane2_4 <- meta_4plex[meta_4plex$lane2 == T,] %>% pull(id)
+lane3_4 <- meta_4plex[meta_4plex$lane3 == T,] %>% pull(id)
+lane1_3 <- meta_3plex[meta_3plex$lane1 == T,] %>% pull(id)
+lane2_3 <- meta_3plex[meta_3plex$lane2 == T,] %>% pull(id)
+lane3_3 <- meta_3plex[meta_3plex$lane3 == T,] %>% pull(id)
+#lists of animals with positive sort in lane 1, 2, 3 on their respective day
+
+first_4 <- c("SI-TT-A5", "SI-TT-A6", "SI-TT-D5", "SI-TT-D6")
+second_4 <- c("SI-TT-B5", "SI-TT-B6", "SI-TT-E5", "SI-TT-E6")
+third_4 <- c("SI-TT-C5", "SI-TT-C6", "SI-TT-F5", "SI-TT-F6")
+first_3 <- c("SI-TT-A1", "SI-TT-A6", "SI-TT-B1", "SI-TT-A8")
+second_3 <- c("SI-TT-A3", "SI-TT-A7", "SI-TT-B4", "SI-TT-C1")
+third_3 <- c("SI-TT-A5", "SI-TT-A9", "SI-TT-B5", "SI-TT-C4")
+#lists of how each lane is called as lane 1, 2, 3 on their respective day
+
+sun1$lane <- sun1$hash.mcl.ID
+sun1$lane [sun1$lane %in% lane1_4 & sun1$orig.ident %in% first_4] <- "Sun1pos"
+sun1$lane [sun1$lane %in% lane2_4 & sun1$orig.ident %in% second_4] <- "Sun1pos"
+sun1$lane [sun1$lane %in% lane3_4 & sun1$orig.ident %in% third_4] <- "Sun1pos"
+sun1$lane [sun1$lane %in% sun1$hash.mcl.ID] <- "Sun1neg"
+#positive is when an animal ID is matching the list for lane 1 and the name of the lane 1 as well (2 and 3 respectively)
+sun2$lane <- sun2$hash.mcl.ID
+sun2$lane [sun2$lane %in% lane1_4 & sun2$orig.ident %in% first_4] <- "Sun1pos"
+sun2$lane [sun2$lane %in% lane2_4 & sun2$orig.ident %in% second_4] <- "Sun1pos"
+sun2$lane [sun2$lane %in% lane3_4 & sun2$orig.ident %in% third_4] <- "Sun1pos"
+sun2$lane [sun2$lane %in% sun2$hash.mcl.ID] <- "Sun1neg"
+
+sun3$lane <- sun3$hash.mcl.ID
+sun3$lane [sun3$lane %in% lane1_3 & sun3$orig.ident %in% first_3] <- "Sun1pos"
+sun3$lane [sun3$lane %in% lane2_3 & sun3$orig.ident %in% second_3] <- "Sun1pos"
+sun3$lane [sun3$lane %in% lane3_3 & sun3$orig.ident %in% third_3] <- "Sun1pos"
+sun3$lane [sun3$lane %in% sun3$hash.mcl.ID] <- "Sun1neg"
+
+sun4$lane <- sun4$hash.mcl.ID
+sun4$lane [sun4$lane %in% lane1_3 & sun4$orig.ident %in% first_3] <- "Sun1pos"
+sun4$lane [sun4$lane %in% lane2_3 & sun4$orig.ident %in% second_3] <- "Sun1pos"
+sun4$lane [sun4$lane %in% lane3_3 & sun4$orig.ident %in% third_3] <- "Sun1pos"
+sun4$lane [sun4$lane %in% sun4$hash.mcl.ID] <- "Sun1neg"
+
+DimPlot(sun1, split.by = "lane")
+DimPlot(sun2, split.by = "lane")
+DimPlot(sun3, split.by = "lane")
+DimPlot(sun4, split.by = "lane")
+###############
+```
+
+
+```{r}
+table(sun1$lane, sun1$area)
+table(sun1$lane, sun1$hash.mcl.ID)
+table(sun1$hash.mcl.ID, sun1$orig.ident)
+
+table(sun2$lane, sun2$area)
+table(sun2$lane, sun2$hash.mcl.ID)
+table(sun2$hash.mcl.ID, sun2$orig.ident)
+
+table(sun3$lane, sun3$area)
+table(sun3$lane, sun3$hash.mcl.ID)
+table(sun3$hash.mcl.ID, sun3$orig.ident)
+
+table(sun4$lane, sun4$area)
+table(sun4$lane, sun4$hash.mcl.ID)
+table(sun4$hash.mcl.ID, sun4$orig.ident)
+```
+
+```{r}
+sun1$sort <- sun1$hash.mcl.ID
+for (var in meta_4plex$id){
+  #print(var)
+  prob <- meta_4plex[meta_4plex$id == var,] %>% pull(prob1)
+  sun1$sort [sun1$sort == var & sun1$orig.ident %in% first_4] <- prob
+  prob <- meta_4plex[meta_4plex$id == var,] %>% pull(prob2)
+  sun1$sort [sun1$sort == var & sun1$orig.ident %in% second_4] <- prob
+  prob <- meta_4plex[meta_4plex$id == var,] %>% pull(prob3)
+  sun1$sort [sun1$sort == var & sun1$orig.ident %in% third_4] <- prob
+}
+#pull out sorting probability by ID and add it to respective lane only
+
+sun2$sort <- sun2$hash.mcl.ID
+for (var in meta_4plex$id){
+  #print(var)
+  prob <- meta_4plex[meta_4plex$id == var,] %>% pull(prob1)
+  sun2$sort [sun2$sort == var & sun2$orig.ident %in% first_4] <- prob
+  prob <- meta_4plex[meta_4plex$id == var,] %>% pull(prob2)
+  sun2$sort [sun2$sort == var & sun2$orig.ident %in% second_4] <- prob
+  prob <- meta_4plex[meta_4plex$id == var,] %>% pull(prob3)
+  sun2$sort [sun2$sort == var & sun2$orig.ident %in% third_4] <- prob
+}
+
+sun3$sort <- sun3$hash.mcl.ID
+for (var in meta_3plex$id){
+  #print(var)
+  prob <- meta_3plex[meta_3plex$id == var,] %>% pull(prob1)
+  sun3$sort [sun3$sort == var & sun3$orig.ident %in% first_3] <- prob
+  prob <- meta_3plex[meta_3plex$id == var,] %>% pull(prob2)
+  sun3$sort [sun3$sort == var & sun3$orig.ident %in% second_3] <- prob
+  prob <- meta_3plex[meta_3plex$id == var,] %>% pull(prob3)
+  sun3$sort [sun3$sort == var & sun3$orig.ident %in% third_3] <- prob
+}
+
+sun4$sort <- sun4$hash.mcl.ID
+for (var in meta_3plex$id){
+  #print(var)
+  prob <- meta_3plex[meta_3plex$id == var,] %>% pull(prob1)
+  sun4$sort [sun4$sort == var & sun4$orig.ident %in% first_3] <- prob
+  prob <- meta_3plex[meta_3plex$id == var,] %>% pull(prob2)
+  sun4$sort [sun4$sort == var & sun4$orig.ident %in% second_3] <- prob
+  prob <- meta_3plex[meta_3plex$id == var,] %>% pull(prob3)
+  sun4$sort [sun4$sort == var & sun4$orig.ident %in% third_3] <- prob
+}
+
+DimPlot(sun1, group.by = "sort")
+DimPlot(sun2, group.by = "sort")
+DimPlot(sun3, group.by = "sort")
+DimPlot(sun4, group.by = "sort")
+###############
+```
+
+
+```{r}
+table(sun1$sort, sun1$area)
+table(sun1$sort, sun1$hash.mcl.ID)
+
+table(sun2$sort, sun2$area)
+table(sun2$sort, sun2$hash.mcl.ID)
+
+table(sun3$sort, sun3$area)
+table(sun3$sort, sun3$hash.mcl.ID)
+
+table(sun4$sort, sun4$area)
+table(sun4$sort, sun4$hash.mcl.ID)
+```
+
+
+
+```{r}
+#Read in all the cellbender runs and cellranger runs
+#4plex runs
+A5_4 <- Read10X_h5(paste0(filepath,"4plex/A5_filtered_feature_bc_matrix.h5"))
+A6_4 <- Read10X_h5(paste0(filepath,"4plex/A6_filtered_feature_bc_matrix.h5"))
+B5_4 <- Read10X_h5(paste0(filepath,"4plex/B5_filtered_feature_bc_matrix.h5"))
+B6_4 <- Read10X_h5(paste0(filepath,"4plex/B6_filtered_feature_bc_matrix.h5"))
+C5_4 <- Read10X_h5(paste0(filepath,"4plex/C5_filtered_feature_bc_matrix.h5"))
+C6_4 <- Read10X_h5(paste0(filepath,"4plex/C6_filtered_feature_bc_matrix.h5"))
+D5_4 <- Read10X_h5(paste0(filepath,"4plex/D5_filtered_feature_bc_matrix.h5"))
+D6_4 <- Read10X_h5(paste0(filepath,"4plex/D6_filtered_feature_bc_matrix.h5"))
+E5_4 <- Read10X_h5(paste0(filepath,"4plex/E5_filtered_feature_bc_matrix.h5"))
+E6_4 <- Read10X_h5(paste0(filepath,"4plex/E6_filtered_feature_bc_matrix.h5"))
+F5_4 <- Read10X_h5(paste0(filepath,"4plex/F5_filtered_feature_bc_matrix.h5"))
+F6_4 <- Read10X_h5(paste0(filepath,"4plex/F6_filtered_feature_bc_matrix.h5"))
+
+#3plex runs
+A1_3 <- Read10X_h5(paste0(filepath,"3plex/A1_filtered_feature_bc_matrix.h5"))
+A3_3 <- Read10X_h5(paste0(filepath,"3plex/A3_filtered_feature_bc_matrix.h5"))
+A5_3 <- Read10X_h5(paste0(filepath,"3plex/A5_filtered_feature_bc_matrix.h5"))
+A6_3 <- Read10X_h5(paste0(filepath,"3plex/A6_filtered_feature_bc_matrix.h5"))
+A7_3 <- Read10X_h5(paste0(filepath,"3plex/A7_filtered_feature_bc_matrix.h5"))
+A8_3 <- Read10X_h5(paste0(filepath,"3plex/A8_filtered_feature_bc_matrix.h5"))
+A9_3 <- Read10X_h5(paste0(filepath,"3plex/A9_filtered_feature_bc_matrix.h5"))
+C1_3 <- Read10X_h5(paste0(filepath,"3plex/C1_filtered_feature_bc_matrix.h5"))
+C4_3 <- Read10X_h5(paste0(filepath,"3plex/C4_filtered_feature_bc_matrix.h5"))
+```
+
+
+```{r}
+### Merge everything, SCOP metadata to cellbended runs
+### colnames SCOP
+#sun1 _1 to _9
+#sun2 _1 to _3
+#sun3 _1 to _6
+#sun4 _1 to _3
+##################################
+# mats <- Sys.glob(file.path("/projects/dylan/leptin_paper/sc_preprocessing/gex_counts/TAPSEQ", "D*L*", "outs/raw_feature_bc_matrix.h5"))[-10]
+# mats <- purrr::map(mats, ~Read10X_h5(.x))
+# Intersect_test(mats[[1]], A5_4, sun1, "1")
+# Intersect_test(mats[[2]], B5_4, sun1, "3")
+# Intersect_test(mats[[3]], C5_4, sun1, "5")
+# Intersect_test(mats[[4]], D5_4, sun1, "7")
+# Intersect_test(mats[[5]], F5_4, sun1, "9")
+# Intersect_test(mats[[6]], A6_4, sun1, "2")
+# Intersect_test(mats[[7]], B6_4, sun1, "4")
+# Intersect_test(mats[[8]], C6_4, sun1, "6")
+# Intersect_test(mats[[9]], D6_4, sun2, "1")
+```
+
+
+```{r}
+A5_sun1 <- SCOP_rename(A5_4, "1", sun1)#SCOP pipeline changes dashes to underscores
+A6_sun1 <- SCOP_rename(A6_4, "2", sun1)
+B5_sun1 <- SCOP_rename(B5_4, "3", sun1)
+B6_sun1 <- SCOP_rename(B6_4, "4", sun1)
+C5_sun1 <- SCOP_rename(C5_4, "5", sun1)
+C6_sun1 <- SCOP_rename(C6_4, "6", sun1)
+D5_sun1 <- SCOP_rename(D5_4, "7", sun1)
+E5_sun1 <- SCOP_rename(E5_4, "8", sun1)
+F5_sun1 <- SCOP_rename(F5_4, "9", sun1)
+
+D6_sun2 <- SCOP_rename(D6_4, "1", sun2)#SCOP pipeline changes dashes to underscores
+E6_sun2 <- SCOP_rename(E6_4, "2", sun2)
+F6_sun2 <- SCOP_rename(F6_4, "3", sun2)
+
+A1_sun3 <- SCOP_rename(A1_3, "1", sun3)#SCOP pipeline changes dashes to underscores
+A3_sun3 <- SCOP_rename(A3_3, "2", sun3)
+A5_sun3 <- SCOP_rename(A5_3, "3", sun3)
+A6_sun3 <- SCOP_rename(A6_3, "4", sun3)
+A7_sun3 <- SCOP_rename(A7_3, "5", sun3)
+A9_sun3 <- SCOP_rename(A9_3, "6", sun3)
+
+A8_sun4 <- SCOP_rename(A8_3, "1", sun4)#SCOP pipeline changes dashes to underscores
+C1_sun4 <- SCOP_rename(C1_3, "2", sun4)
+C4_sun4 <- SCOP_rename(C4_3, "3", sun4)
+
+rm(A5_4, A6_4, B5_4, B6_4, C5_4, C6_4, D5_4, E5_4, F5_4, D6_4, E6_4, F6_4, A1_3, A3_3, A5_3, A6_3, A7_3, A9_3, A8_3, C1_3, C4_3)
+rm(sun1, sun2, sun3, sun4)
+```
+
+```{r}
+variable_names <- c(A5_sun1, A6_sun1, B5_sun1, B6_sun1, C5_sun1, C6_sun1, D5_sun1, E5_sun1, F5_sun1, D6_sun2, E6_sun2, F6_sun2, A1_sun3, A3_sun3, A5_sun3, A6_sun3, A7_sun3, A9_sun3, A8_sun4, C1_sun4, C4_sun4)#list of all Seurat objects
+
+features <- SelectIntegrationFeatures(variable_names) #intregration features across all Seurat objects
+
+variable_names <- lapply(X = variable_names, FUN = function(x) {
+  x <- ScaleData(x, features = features, verbose = FALSE)
+  x <- RunPCA(x, features = features, verbose = FALSE)
+}) #apply these features for scaling and PCA on all Seurat objects separately
+
+anchors <- FindIntegrationAnchors(object.list = variable_names, reference = c(1, 2, 7, 10, 14, 18, 19), anchor.features = features, reduction = "rpca", dims = 1:50) #create anchorset with all Seurat objects and their variable features
+
+```
+
+
+```{r}
+rm(A5_sun1, A6_sun1, B5_sun1, B6_sun1, C5_sun1, C6_sun1, D5_sun1, E5_sun1, F5_sun1, D6_sun2, E6_sun2, F6_sun2, A1_sun3, A3_sun3, A5_sun3, A6_sun3, A7_sun3, A9_sun3, A8_sun4, C1_sun4, C4_sun4)
+#qs::qsave(anchors, file = paste0(filepath,"anchors.qs"))
+#qs::qsave(variable_names, file = paste0(filepath,"variable_names.qs"))
+```
+
+
+```{r}
+#anchors <- qs::qread(paste0(filepath,"anchors.qs"))
+#variable_names <- qs::qread(paste0(filepath,"variable_names.qs"))
+integrated <- IntegrateData(anchorset = anchors, dims = 1:50) #integrate objects (too large to run locally)
+```
+
+```{r}
+integrated <- ScaleData(integrated)
+integrated <- RunPCA(integrated)
+integrated <- FindNeighbors(integrated, dims = 1:50)
+integrated <- FindClusters(integrated)
+integrated <- RunUMAP(integrated, dims = 1:50)
+qs::qsave(integrated, file = paste0(filepath,"7plex_integrated.qs"))
+```
+
+
+
+```{r}
+integrated <- qs::qread("/projects/bernd/Study4_viral_tracing/7plex_integrated.qs")
+tapseq <- subset(integrated, cells = Cells(integrated)[integrated@meta.data$old.ident %in% c("SI-TT-A5_sun1","SI-TT-A6_sun1", "SI-TT-B5_sun1", "SI-TT-B6_sun1", "SI-TT-C5_sun1", "SI-TT-C6_sun1", "SI-TT-D5_sun1", "SI-TT-F5_sun1", "SI-TT-D6_sun2")])
+gene <- c("Agrp", "Kiss1", "Npy", "Lepr", "Glp1r", "Pomc", "Tbx19", "Ghrh", "Sst", "Calcr", "Ramp3", "Htr2c", "Mc3r", "Mc4r", "Ghsr", "Nr5a1", "Socs3", "Fgfr1", "Insr", "Gipr", "v147")
+
+purrr::map(gene, function(x) {
+  df <- data.frame(ts = tapseq@assays$TS@counts[x,], cr = tapseq@assays$CR@counts[x,])
+  df <- df[df$cr>0,]
+  plot(df$cr,df$ts, main = x)
+  lm(ts~cr, data=df) %>% broom::tidy(.)
+})
+
+
+```
+
+```{r}
+df <- prop.table(table(integrated@meta.data$sort, integrated@assays$CR@counts["v147",]>0), margin = 1) %>% data.frame()
+cor(as.numeric(integrated@meta.data$sort), as.numeric(integrated@assays$CR@counts["v147",]))
+
+df1 <- table(integrated@meta.data$sort, integrated@assays$CR@counts["v147",]) %>% data.frame()
+
+plot(integrated@meta.data$sort, integrated@assays$CR@counts["v147",])
+lm(Var1~Freq, data=df1)
+```
+```{r}
+comp1 <- subset(integrated, cells = Cells(integrated)[integrated@meta.data$old.ident %in% c("SI-TT-F5_sun1")])
+comp1 <- comp1[, sample(colnames(comp1), size =10000, replace=F)]
+comp2 <- subset(integrated, cells = Cells(integrated)[integrated@meta.data$old.ident %in% c("SI-TT-C4_sun4")])
+comp2 <- comp2[, sample(colnames(comp2), size =10000, replace=F)]
+gene <- c("v147")
+
+purrr::map(gene, function(x) {
+  df <- data.frame(nonamp = comp1@assays$CR@counts[x,], preamp = comp2@assays$CR@counts[x,])
+  plot(df$nonamp,df$preamp, main = x)
+  lm(nonamp~preamp, data=df) %>% broom::tidy(.)
+})
+```
+
+```{r}
+df <- data.frame(ts = tapseq@assays$TS@counts["v147",], cr = tapseq@assays$CR@counts["v147",])
+ggscatter(df, x = "cr", y = "ts", 
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "pearson",
+          xlab = "CR", ylab = "TS")
+
+df1 <- data.frame(nonamp = comp1@assays$CR@counts["v147",], preamp = comp2@assays$CR@counts["v147",])
+ggscatter(df1, x = "nonamp", y = "preamp", 
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "pearson",
+          xlab = "standard", ylab = "preamplified")
+
+```
+```{r}
+df1 <- data.frame(nonamp = comp1@assays$CR@counts["v147",], sort = comp1@meta.data$sort)
+df1 <- df1[df1$sort>0.9,]
+df1 <- df1[1:1000,]
+
+df2 <- data.frame(preamp = comp2@assays$CR@counts["v147",], sort = comp2@meta.data$sort)
+df2 <- df2[df2$sort>0.9,]
+df2 <- df2[1:1000,]
+plot(df1$nonamp,df2$preamp, main = "v147")
+sum(df1$nonamp>0)
+sum(df2$preamp>0)
+
+df3 <- data.frame(nonamp = comp1@assays$TS@counts["v147",], sort = comp1@meta.data$sort)
+df3 <- df3[df3$sort>0.9,]
+df3 <- df3[1:1000,]
+sum(df3$nonamp>0)
+```
+
