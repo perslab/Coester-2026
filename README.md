@@ -17,11 +17,11 @@ Email: tune.pers@sund.ku.dk
 Genome-wide association studies implicate the brain in common obesity, yet the neuronal populations mediating this risk remain functionally unvalidated. We present a projection-resolved atlas of the mouse mediobasal hypothalamus, combining retrograde tracing with single-nucleus RNA sequencing of 193,989 nuclei and spatial transcriptomics of 289,888 cells to resolve 43 neuronal and 13 glial cell types, each anatomically localised and assigned predicted projections to eight brain regions. Integrating this atlas with obesity GWAS identified three enriched populations spanning the ventromedial, dorsomedial and posterior hypothalamus. The most enriched, Lmx1a/b-expressing neurons of the premammillary and posterior hypothalamus, projected to the amygdala and lateral hypothalamus confirmed by whole-brain light-sheet imaging. Silencing these neurons caused progressive weight gain, exacerbated by an energy-dense diet. Corresponding LMX1A-expressing human neurons independently carried BMI enrichment. This browsable atlas links hypothalamic transcriptional identity to long-range output and nominates Lmx1a/b neurons as a conserved regulator of body weight.
 
 HTML files are plotly-rendered spatial coordinates of 24 brain sections, where a jitter is added to blend the individual planes. The rendered cells are centroids and downsampled by cell type.
-- FULL contains all transferred single-cell celltypes with the same 0.4 score threshold used throughout the paper
-- REGIONS contains the exact manual annotation of Paxinos regions, left-right merged
-- PROJECTIONS contains the projection label for each cell based on spatial statistics within each brain section (those are calls for individual cells, not the cell-type based consensus described in the paper)
+- [FULL](https://coester-et-al-3d.netlify.app/full_3d_brain) contains all transferred single-cell celltypes with the same 0.4 score threshold used throughout the paper
+- [REGIONS](https://coester-et-al-3d.netlify.app/regions_3d_brain) contains the exact manual annotation of Paxinos regions, left-right merged
+- [PROJECTIONS](https://coester-et-al-3d.netlify.app/projections_3d_brain) contains the projection label for each cell based on spatial statistics within each brain section (those are calls for individual cells, not the cell-type based consensus described in the paper)
 
-CODE directory is populated with all the processing code. This is NOT curated, streamlined, or making sense in any way. I recommend feeding this to an LLM if you want to get any information out of it.
+CODE directory is populated with all the processing code. This is NOT curated, streamlined yet. 
 
 Conda_envs has all the details on the environments used.
 
