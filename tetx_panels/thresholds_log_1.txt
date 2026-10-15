@@ -1,0 +1,975 @@
+=== 49-1.czi ===
+  • Scene: TR4
+Otsu thresholds:   AF647=173.4, AF488=456.1, DAPI=746.5
+Upper thresholds:  AF647=3474.4, AF488=1608.3, DAPI=1920.0
+    -> saved: merged_rgb/49-1_TR4.png
+  • Scene: TR3
+Otsu thresholds:   AF647=157.6, AF488=467.5, DAPI=743.4
+Upper thresholds:  AF647=1762.1, AF488=1577.6, DAPI=1816.5
+    -> saved: merged_rgb/49-1_TR3.png
+  • Scene: TR2
+Otsu thresholds:   AF647=137.0, AF488=443.6, DAPI=660.5
+Upper thresholds:  AF647=1592.1, AF488=1313.9, DAPI=2196.0
+    -> saved: merged_rgb/49-1_TR2.png
+  • Scene: TR5
+Otsu thresholds:   AF647=144.3, AF488=459.3, DAPI=723.2
+Upper thresholds:  AF647=3077.2, AF488=1441.0, DAPI=1766.0
+    -> saved: merged_rgb/49-1_TR5.png
+  • Scene: TR1
+Otsu thresholds:   AF647=118.0, AF488=419.0, DAPI=7199.6
+Upper thresholds:  AF647=1447.2, AF488=1120.3, DAPI=16383.0
+    -> saved: merged_rgb/49-1_TR1.png
+  • Scene: TR6
+Otsu thresholds:   AF647=128.9, AF488=438.0, DAPI=681.9
+Upper thresholds:  AF647=1154.3, AF488=1330.8, DAPI=2509.8
+    -> saved: merged_rgb/49-1_TR6.png
+  • Scene: TR10
+Otsu thresholds:   AF647=136.5, AF488=449.6, DAPI=7967.5
+Upper thresholds:  AF647=1110.0, AF488=1686.4, DAPI=16383.0
+    -> saved: merged_rgb/49-1_TR10.png
+  • Scene: TR12
+Otsu thresholds:   AF647=114.2, AF488=399.5, DAPI=553.0
+Upper thresholds:  AF647=848.6, AF488=1232.2, DAPI=1460.0
+    -> saved: merged_rgb/49-1_TR12.png
+  • Scene: TR9
+Otsu thresholds:   AF647=127.7, AF488=398.9, DAPI=7775.5
+Upper thresholds:  AF647=1165.9, AF488=1179.0, DAPI=16383.0
+    -> saved: merged_rgb/49-1_TR9.png
+  • Scene: TR8
+Otsu thresholds:   AF647=116.0, AF488=378.7, DAPI=526.1
+Upper thresholds:  AF647=1369.2, AF488=1417.0, DAPI=1558.0
+    -> saved: merged_rgb/49-1_TR8.png
+  • Scene: TR11
+Otsu thresholds:   AF647=121.0, AF488=405.8, DAPI=606.3
+Upper thresholds:  AF647=725.8, AF488=1238.8, DAPI=1511.0
+    -> saved: merged_rgb/49-1_TR11.png
+  • Scene: TR7
+Otsu thresholds:   AF647=120.1, AF488=425.5, DAPI=544.0
+Upper thresholds:  AF647=813.8, AF488=1871.0, DAPI=1879.0
+    -> saved: merged_rgb/49-1_TR7.png
+
+=== 10-2.czi ===
+  • Scene: TR1
+Otsu thresholds:   AF647=119.4, AF488=373.5, DAPI=413.8
+Upper thresholds:  AF647=1743.1, AF488=1880.0, DAPI=1303.0
+    -> saved: merged_rgb/10-2_TR1.png
+  • Scene: TR2
+Otsu thresholds:   AF647=115.0, AF488=376.9, DAPI=7775.5
+Upper thresholds:  AF647=1838.6, AF488=1928.9, DAPI=16383.0
+    -> saved: merged_rgb/10-2_TR2.png
+  • Scene: TR4
+Otsu thresholds:   AF647=117.4, AF488=376.0, DAPI=498.9
+Upper thresholds:  AF647=2065.5, AF488=1917.7, DAPI=1747.8
+    -> saved: merged_rgb/10-2_TR4.png
+  • Scene: TR6
+Otsu thresholds:   AF647=1149.7, AF488=363.1, DAPI=407.4
+Upper thresholds:  AF647=11982.4, AF488=5782.8, DAPI=3298.0
+    -> saved: merged_rgb/10-2_TR6.png
+  • Scene: TR5
+Otsu thresholds:   AF647=1116.7, AF488=348.9, DAPI=499.5
+Upper thresholds:  AF647=9682.2, AF488=5379.0, DAPI=3687.2
+    -> saved: merged_rgb/10-2_TR5.png
+  • Scene: TR3
+Otsu thresholds:   AF647=1434.5, AF488=379.2, DAPI=487.1
+Upper thresholds:  AF647=7270.1, AF488=4020.0, DAPI=1279.0
+    -> saved: merged_rgb/10-2_TR3.png
+  • Scene: TR7
+Otsu thresholds:   AF647=993.6, AF488=1859.2, DAPI=3079.7
+Upper thresholds:  AF647=9961.5, AF488=8743.4, DAPI=9046.0
+    -> saved: merged_rgb/10-2_TR7.png
+  • Scene: TR9
+Otsu thresholds:   AF647=1298.2, AF488=374.3, DAPI=455.8
+Upper thresholds:  AF647=13004.7, AF488=6984.6, DAPI=1256.0
+    -> saved: merged_rgb/10-2_TR9.png
+  • Scene: TR8
+Otsu thresholds:   AF647=634.2, AF488=386.9, DAPI=438.3
+Upper thresholds:  AF647=8675.7, AF488=4801.8, DAPI=1100.0
+    -> saved: merged_rgb/10-2_TR8.png
+  • Scene: TR11
+Otsu thresholds:   AF647=1262.7, AF488=395.6, DAPI=471.4
+Upper thresholds:  AF647=8847.4, AF488=4424.5, DAPI=1257.0
+    -> saved: merged_rgb/10-2_TR11.png
+  • Scene: TR10
+Otsu thresholds:   AF647=1034.2, AF488=374.2, DAPI=471.4
+Upper thresholds:  AF647=9277.1, AF488=5832.4, DAPI=1460.0
+    -> saved: merged_rgb/10-2_TR10.png
+
+=== 43-2.czi ===
+  • Scene: TR6
+Otsu thresholds:   AF647=1322.4, AF488=435.0, DAPI=629.5
+Upper thresholds:  AF647=14347.4, AF488=7514.9, DAPI=1557.0
+    -> saved: merged_rgb/43-2_TR6.png
+  • Scene: TR5
+Otsu thresholds:   AF647=812.7, AF488=483.5, DAPI=777.9
+Upper thresholds:  AF647=8837.5, AF488=4851.4, DAPI=1938.0
+    -> saved: merged_rgb/43-2_TR5.png
+  • Scene: TR2
+Otsu thresholds:   AF647=158.0, AF488=421.5, DAPI=635.4
+Upper thresholds:  AF647=4341.8, AF488=1938.2, DAPI=1957.0
+    -> saved: merged_rgb/43-2_TR2.png
+  • Scene: TR4
+Otsu thresholds:   AF647=96.0, AF488=444.4, DAPI=736.0
+Upper thresholds:  AF647=4577.9, AF488=4057.0, DAPI=1928.0
+    -> saved: merged_rgb/43-2_TR4.png
+  • Scene: TR3
+Otsu thresholds:   AF647=126.6, AF488=423.9, DAPI=684.3
+Upper thresholds:  AF647=3122.8, AF488=2792.5, DAPI=1912.0
+    -> saved: merged_rgb/43-2_TR3.png
+  • Scene: TR1
+Otsu thresholds:   AF647=138.9, AF488=396.8, DAPI=544.0
+Upper thresholds:  AF647=2074.1, AF488=2386.1, DAPI=5354.1
+    -> saved: merged_rgb/43-2_TR1.png
+  • Scene: TR9
+Otsu thresholds:   AF647=894.6, AF488=461.9, DAPI=697.0
+Upper thresholds:  AF647=5758.5, AF488=5082.6, DAPI=4353.3
+    -> saved: merged_rgb/43-2_TR9.png
+  • Scene: TR8
+Otsu thresholds:   AF647=1081.5, AF488=433.5, DAPI=608.0
+Upper thresholds:  AF647=11664.8, AF488=7532.4, DAPI=1761.0
+    -> saved: merged_rgb/43-2_TR8.png
+  • Scene: TR7
+Otsu thresholds:   AF647=1150.8, AF488=1282.0, DAPI=560.7
+Upper thresholds:  AF647=10328.8, AF488=9778.0, DAPI=1415.0
+    -> saved: merged_rgb/43-2_TR7.png
+  • Scene: TR10
+Otsu thresholds:   AF647=1083.2, AF488=424.5, DAPI=558.6
+Upper thresholds:  AF647=10019.6, AF488=5935.3, DAPI=1524.8
+    -> saved: merged_rgb/43-2_TR10.png
+
+=== 29-2.czi ===
+  • Scene: TR4
+Otsu thresholds:   AF647=1310.6, AF488=376.5, DAPI=544.0
+Upper thresholds:  AF647=11365.4, AF488=4730.2, DAPI=5858.1
+    -> saved: merged_rgb/29-2_TR4.png
+  • Scene: TR3
+Otsu thresholds:   AF647=1094.2, AF488=385.4, DAPI=521.2
+Upper thresholds:  AF647=8351.8, AF488=4871.0, DAPI=1958.0
+    -> saved: merged_rgb/29-2_TR3.png
+  • Scene: TR2
+Otsu thresholds:   AF647=130.3, AF488=401.4, DAPI=496.0
+Upper thresholds:  AF647=4043.8, AF488=3523.9, DAPI=1704.0
+    -> saved: merged_rgb/29-2_TR2.png
+  • Scene: TR6
+Otsu thresholds:   AF647=1159.9, AF488=372.1, DAPI=479.2
+Upper thresholds:  AF647=6521.4, AF488=4150.3, DAPI=1510.0
+    -> saved: merged_rgb/29-2_TR6.png
+  • Scene: TR5
+Otsu thresholds:   AF647=1236.3, AF488=359.3, DAPI=539.7
+Upper thresholds:  AF647=9162.6, AF488=5234.0, DAPI=3023.0
+    -> saved: merged_rgb/29-2_TR5.png
+  • Scene: TR1
+Otsu thresholds:   AF647=119.2, AF488=388.2, DAPI=503.3
+Upper thresholds:  AF647=1627.0, AF488=1606.1, DAPI=1106.0
+    -> saved: merged_rgb/29-2_TR1.png
+  • Scene: TR9
+Otsu thresholds:   AF647=122.8, AF488=404.2, DAPI=590.4
+Upper thresholds:  AF647=2839.1, AF488=2530.1, DAPI=1716.0
+    -> saved: merged_rgb/29-2_TR9.png
+  • Scene: TR7
+Otsu thresholds:   AF647=147.6, AF488=386.7, DAPI=563.3
+Upper thresholds:  AF647=4058.2, AF488=2769.0, DAPI=1412.0
+    -> saved: merged_rgb/29-2_TR7.png
+  • Scene: TR8
+Otsu thresholds:   AF647=148.3, AF488=413.2, DAPI=593.9
+Upper thresholds:  AF647=2546.1, AF488=2062.9, DAPI=1728.0
+    -> saved: merged_rgb/29-2_TR8.png
+
+=== 10-1.czi ===
+  • Scene: TR5
+Otsu thresholds:   AF647=104.3, AF488=486.1, DAPI=827.7
+Upper thresholds:  AF647=1245.1, AF488=1570.8, DAPI=2171.0
+    -> saved: merged_rgb/10-1_TR5.png
+  • Scene: TR2
+Otsu thresholds:   AF647=180.3, AF488=538.5, DAPI=832.1
+Upper thresholds:  AF647=3310.1, AF488=2389.0, DAPI=1849.0
+    -> saved: merged_rgb/10-1_TR2.png
+  • Scene: TR6
+Otsu thresholds:   AF647=100.6, AF488=473.1, DAPI=761.4
+Upper thresholds:  AF647=1395.8, AF488=1787.4, DAPI=2084.0
+    -> saved: merged_rgb/10-1_TR6.png
+  • Scene: TR4
+Otsu thresholds:   AF647=101.4, AF488=475.7, DAPI=831.0
+Upper thresholds:  AF647=936.8, AF488=1370.5, DAPI=2328.0
+    -> saved: merged_rgb/10-1_TR4.png
+  • Scene: TR1
+Otsu thresholds:   AF647=114.5, AF488=443.5, DAPI=680.0
+Upper thresholds:  AF647=1724.1, AF488=1736.7, DAPI=2629.0
+    -> saved: merged_rgb/10-1_TR1.png
+  • Scene: TR3
+Otsu thresholds:   AF647=137.6, AF488=473.7, DAPI=767.6
+Upper thresholds:  AF647=1965.9, AF488=1655.7, DAPI=1791.0
+    -> saved: merged_rgb/10-1_TR3.png
+  • Scene: TR10
+
+Otsu thresholds:   AF647=140.7, AF488=405.2, DAPI=580.3
+Upper thresholds:  AF647=3679.9, AF488=1988.2, DAPI=1938.1
+    -> saved: merged_rgb/10-1_TR10.png
+  • Scene: TR12
+Otsu thresholds:   AF647=117.0, AF488=404.7, DAPI=535.4
+Upper thresholds:  AF647=2715.0, AF488=2281.3, DAPI=1441.0
+    -> saved: merged_rgb/10-1_TR12.png
+  • Scene: TR9
+Otsu thresholds:   AF647=92.8, AF488=403.9, DAPI=569.8
+Upper thresholds:  AF647=1415.6, AF488=2635.3, DAPI=2086.0
+    -> saved: merged_rgb/10-1_TR9.png
+  • Scene: TR8
+Otsu thresholds:   AF647=171.0, AF488=395.1, DAPI=543.6
+Upper thresholds:  AF647=5978.5, AF488=1779.0, DAPI=1512.0
+    -> saved: merged_rgb/10-1_TR8.png
+  • Scene: TR11
+Otsu thresholds:   AF647=98.5, AF488=384.8, DAPI=565.0
+Upper thresholds:  AF647=1930.5, AF488=1562.3, DAPI=1345.0
+    -> saved: merged_rgb/10-1_TR11.png
+  • Scene: TR7
+Otsu thresholds:   AF647=135.4, AF488=398.1, DAPI=502.5
+Upper thresholds:  AF647=2817.5, AF488=1411.9, DAPI=1334.0
+    -> saved: merged_rgb/10-1_TR7.png
+
+=== 17-2.czi ===
+  • Scene: TR1
+Otsu thresholds:   AF647=113.2, AF488=393.4, DAPI=551.0
+Upper thresholds:  AF647=885.8, AF488=1017.0, DAPI=1272.0
+    -> saved: merged_rgb/17-2_TR1.png
+  • Scene: TR3
+Otsu thresholds:   AF647=120.1, AF488=395.9, DAPI=578.0
+Upper thresholds:  AF647=3340.5, AF488=3686.0, DAPI=1387.0
+    -> saved: merged_rgb/17-2_TR3.png
+  • Scene: TR2
+Otsu thresholds:   AF647=111.9, AF488=396.7, DAPI=575.2
+Upper thresholds:  AF647=1375.0, AF488=1408.3, DAPI=1566.0
+    -> saved: merged_rgb/17-2_TR2.png
+  • Scene: TR4
+Otsu thresholds:   AF647=131.8, AF488=391.0, DAPI=547.0
+Upper thresholds:  AF647=3666.6, AF488=3317.7, DAPI=1330.0
+    -> saved: merged_rgb/17-2_TR4.png
+  • Scene: TR6
+Otsu thresholds:   AF647=131.9, AF488=383.8, DAPI=520.5
+Upper thresholds:  AF647=2170.9, AF488=2389.4, DAPI=3871.0
+    -> saved: merged_rgb/17-2_TR6.png
+  • Scene: TR5
+Otsu thresholds:   AF647=105.7, AF488=382.8, DAPI=505.2
+Upper thresholds:  AF647=3160.0, AF488=3304.0, DAPI=1514.0
+    -> saved: merged_rgb/17-2_TR5.png
+  • Scene: TR7
+Otsu thresholds:   AF647=110.8, AF488=394.1, DAPI=561.3
+Upper thresholds:  AF647=2131.7, AF488=2636.0, DAPI=1383.0
+    -> saved: merged_rgb/17-2_TR7.png
+  • Scene: TR9
+Otsu thresholds:   AF647=133.8, AF488=434.0, DAPI=570.1
+Upper thresholds:  AF647=3338.4, AF488=2011.2, DAPI=1384.0
+    -> saved: merged_rgb/17-2_TR9.png
+  • Scene: TR8
+Otsu thresholds:   AF647=108.0, AF488=407.0, DAPI=526.1
+Upper thresholds:  AF647=2940.1, AF488=3713.0, DAPI=1342.0
+    -> saved: merged_rgb/17-2_TR8.png
+
+=== 42-2.czi ===
+  • Scene: TR6
+Otsu thresholds:   AF647=991.4, AF488=400.3, DAPI=474.2
+Upper thresholds:  AF647=8898.4, AF488=5822.8, DAPI=1991.0
+    -> saved: merged_rgb/42-2_TR6.png
+  • Scene: TR4
+Otsu thresholds:   AF647=1455.1, AF488=372.2, DAPI=490.2
+Upper thresholds:  AF647=10774.7, AF488=6989.2, DAPI=1614.0
+    -> saved: merged_rgb/42-2_TR4.png
+  • Scene: TR5
+Otsu thresholds:   AF647=1189.5, AF488=376.4, DAPI=485.5
+Upper thresholds:  AF647=13528.4, AF488=6594.7, DAPI=1480.0
+    -> saved: merged_rgb/42-2_TR5.png
+  • Scene: TR1
+Otsu thresholds:   AF647=503.4, AF488=383.2, DAPI=475.8
+Upper thresholds:  AF647=5717.2, AF488=3293.1, DAPI=1209.0
+    -> saved: merged_rgb/42-2_TR1.png
+  • Scene: TR2
+Otsu thresholds:   AF647=1088.9, AF488=373.2, DAPI=487.0
+Upper thresholds:  AF647=8318.9, AF488=4844.9, DAPI=1352.0
+    -> saved: merged_rgb/42-2_TR2.png
+  • Scene: TR3
+Otsu thresholds:   AF647=1037.1, AF488=401.5, DAPI=529.2
+Upper thresholds:  AF647=8679.9, AF488=5284.4, DAPI=1337.0
+    -> saved: merged_rgb/42-2_TR3.png
+  • Scene: TR7
+Otsu thresholds:   AF647=1109.7, AF488=431.2, DAPI=622.9
+Upper thresholds:  AF647=10286.7, AF488=5974.5, DAPI=2143.0
+    -> saved: merged_rgb/42-2_TR7.png
+  • Scene: TR8
+Otsu thresholds:   AF647=1365.3, AF488=427.8, DAPI=654.2
+Upper thresholds:  AF647=12247.5, AF488=4810.2, DAPI=2277.0
+    -> saved: merged_rgb/42-2_TR8.png
+
+=== 36-2.czi ===
+  • Scene: TR6
+Otsu thresholds:   AF647=107.9, AF488=428.4, DAPI=7263.6
+Upper thresholds:  AF647=2987.0, AF488=3243.6, DAPI=16383.0
+    -> saved: merged_rgb/36-2_TR6.png
+  • Scene: TR5
+Otsu thresholds:   AF647=101.4, AF488=416.3, DAPI=720.4
+Upper thresholds:  AF647=4279.8, AF488=4645.0, DAPI=2048.0
+    -> saved: merged_rgb/36-2_TR5.png
+  • Scene: TR3
+Otsu thresholds:   AF647=173.4, AF488=482.6, DAPI=804.4
+Upper thresholds:  AF647=4165.9, AF488=2052.6, DAPI=2349.0
+    -> saved: merged_rgb/36-2_TR3.png
+  • Scene: TR2
+Otsu thresholds:   AF647=142.2, AF488=461.3, DAPI=818.6
+Upper thresholds:  AF647=2149.7, AF488=1297.5, DAPI=2284.0
+    -> saved: merged_rgb/36-2_TR2.png
+  • Scene: TR4
+Otsu thresholds:   AF647=163.0, AF488=446.0, DAPI=753.0
+Upper thresholds:  AF647=5007.4, AF488=3096.7, DAPI=2181.0
+    -> saved: merged_rgb/36-2_TR4.png
+  • Scene: TR1
+Otsu thresholds:   AF647=153.6, AF488=467.3, DAPI=776.3
+Upper thresholds:  AF647=1516.9, AF488=1401.0, DAPI=3688.0
+    -> saved: merged_rgb/36-2_TR1.png
+  • Scene: TR8
+Otsu thresholds:   AF647=682.4, AF488=417.3, DAPI=651.4
+Upper thresholds:  AF647=7106.5, AF488=3671.0, DAPI=1799.0
+    -> saved: merged_rgb/36-2_TR8.png
+  • Scene: TR7
+Otsu thresholds:   AF647=119.6, AF488=414.0, DAPI=636.1
+Upper thresholds:  AF647=3658.0, AF488=3501.1, DAPI=1586.0
+    -> saved: merged_rgb/36-2_TR7.png
+
+=== 32-1.czi ===
+  • Scene: TR5
+Otsu thresholds:   AF647=116.6, AF488=428.3, DAPI=674.8
+Upper thresholds:  AF647=531.8, AF488=1225.0, DAPI=1672.0
+    -> saved: merged_rgb/32-1_TR5.png
+  • Scene: TR6
+Otsu thresholds:   AF647=139.5, AF488=455.5, DAPI=665.9
+Upper thresholds:  AF647=704.4, AF488=1165.0, DAPI=1616.0
+    -> saved: merged_rgb/32-1_TR6.png
+  • Scene: TR4
+Otsu thresholds:   AF647=104.8, AF488=430.5, DAPI=648.3
+Upper thresholds:  AF647=949.7, AF488=1655.7, DAPI=1359.0
+    -> saved: merged_rgb/32-1_TR4.png
+  • Scene: TR3
+Otsu thresholds:   AF647=107.3, AF488=421.0, DAPI=619.8
+Upper thresholds:  AF647=700.0, AF488=1227.5, DAPI=1876.0
+    -> saved: merged_rgb/32-1_TR3.png
+  • Scene: TR2
+Otsu thresholds:   AF647=108.5, AF488=414.3, DAPI=611.4
+Upper thresholds:  AF647=675.3, AF488=1031.0, DAPI=1306.0
+    -> saved: merged_rgb/32-1_TR2.png
+  • Scene: TR1
+Otsu thresholds:   AF647=101.8, AF488=799.6, DAPI=544.0
+Upper thresholds:  AF647=654.7, AF488=2330.1, DAPI=3388.4
+    -> saved: merged_rgb/32-1_TR1.png
+  • Scene: TR12
+Otsu thresholds:   AF647=119.4, AF488=410.9, DAPI=557.5
+Upper thresholds:  AF647=846.0, AF488=1152.6, DAPI=1263.0
+    -> saved: merged_rgb/32-1_TR12.png
+  • Scene: TR9
+Otsu thresholds:   AF647=111.7, AF488=416.5, DAPI=600.1
+Upper thresholds:  AF647=1019.7, AF488=1108.0, DAPI=1442.0
+    -> saved: merged_rgb/32-1_TR9.png
+  • Scene: TR7
+Otsu thresholds:   AF647=117.5, AF488=400.7, DAPI=545.2
+Upper thresholds:  AF647=988.3, AF488=1684.9, DAPI=2809.0
+    -> saved: merged_rgb/32-1_TR7.png
+  • Scene: TR10
+Otsu thresholds:   AF647=140.1, AF488=404.2, DAPI=614.8
+Upper thresholds:  AF647=1700.4, AF488=2407.2, DAPI=1776.2
+    -> saved: merged_rgb/32-1_TR10.png
+  • Scene: TR11
+Otsu thresholds:   AF647=119.6, AF488=420.5, DAPI=608.8
+Upper thresholds:  AF647=791.0, AF488=1564.0, DAPI=1453.6
+    -> saved: merged_rgb/32-1_TR11.png
+  • Scene: TR8
+Otsu thresholds:   AF647=118.2, AF488=423.6, DAPI=587.2
+Upper thresholds:  AF647=750.0, AF488=1229.4, DAPI=1245.0
+    -> saved: merged_rgb/32-1_TR8.png
+
+=== 22-1.czi ===
+  • Scene: TR2
+Otsu thresholds:   AF647=117.7, AF488=412.0, DAPI=578.3
+Upper thresholds:  AF647=2790.3, AF488=1626.5, DAPI=1447.0
+    -> saved: merged_rgb/22-1_TR2.png
+  • Scene: TR6
+Otsu thresholds:   AF647=168.8, AF488=398.9, DAPI=539.3
+Upper thresholds:  AF647=3682.2, AF488=1134.5, DAPI=1322.0
+    -> saved: merged_rgb/22-1_TR6.png
+  • Scene: TR4
+Otsu thresholds:   AF647=160.2, AF488=428.7, DAPI=663.6
+Upper thresholds:  AF647=3707.6, AF488=1186.5, DAPI=1622.0
+    -> saved: merged_rgb/22-1_TR4.png
+  • Scene: TR5
+Otsu thresholds:   AF647=96.0, AF488=401.7, DAPI=623.4
+Upper thresholds:  AF647=3417.2, AF488=2105.0, DAPI=1725.0
+    -> saved: merged_rgb/22-1_TR5.png
+  • Scene: TR1
+Otsu thresholds:   AF647=113.4, AF488=391.6, DAPI=508.9
+Upper thresholds:  AF647=2357.3, AF488=1264.1, DAPI=1299.0
+    -> saved: merged_rgb/22-1_TR1.png
+  • Scene: TR3
+Otsu thresholds:   AF647=209.4, AF488=433.3, DAPI=628.8
+Upper thresholds:  AF647=4526.8, AF488=1598.7, DAPI=1508.0
+
+    -> saved: merged_rgb/22-1_TR3.png
+  • Scene: TR7
+Otsu thresholds:   AF647=134.8, AF488=387.3, DAPI=491.6
+Upper thresholds:  AF647=2899.4, AF488=1149.1, DAPI=1131.0
+    -> saved: merged_rgb/22-1_TR7.png
+  • Scene: TR11
+Otsu thresholds:   AF647=157.2, AF488=404.2, DAPI=566.0
+Upper thresholds:  AF647=3506.8, AF488=1352.0, DAPI=1374.0
+    -> saved: merged_rgb/22-1_TR11.png
+  • Scene: TR9
+Otsu thresholds:   AF647=158.9, AF488=418.0, DAPI=580.3
+Upper thresholds:  AF647=2778.7, AF488=1332.0, DAPI=1572.0
+    -> saved: merged_rgb/22-1_TR9.png
+  • Scene: TR8
+Otsu thresholds:   AF647=167.5, AF488=403.3, DAPI=540.7
+Upper thresholds:  AF647=3980.7, AF488=1695.0, DAPI=1856.0
+    -> saved: merged_rgb/22-1_TR8.png
+  • Scene: TR10
+Otsu thresholds:   AF647=158.8, AF488=425.4, DAPI=591.7
+Upper thresholds:  AF647=2788.0, AF488=1767.0, DAPI=1392.0
+    -> saved: merged_rgb/22-1_TR10.png
+  • Scene: TR12
+Otsu thresholds:   AF647=173.2, AF488=440.3, DAPI=527.6
+Upper thresholds:  AF647=2570.2, AF488=1319.3, DAPI=1221.0
+    -> saved: merged_rgb/22-1_TR12.png
+
+=== 29-1.czi ===
+  • Scene: TR5
+Otsu thresholds:   AF647=116.5, AF488=433.2, DAPI=674.5
+Upper thresholds:  AF647=1080.8, AF488=1548.2, DAPI=1912.0
+    -> saved: merged_rgb/29-1_TR5.png
+  • Scene: TR2
+Otsu thresholds:   AF647=111.7, AF488=415.4, DAPI=619.6
+Upper thresholds:  AF647=1802.7, AF488=1728.6, DAPI=1643.0
+    -> saved: merged_rgb/29-1_TR2.png
+  • Scene: TR1
+Otsu thresholds:   AF647=152.4, AF488=411.3, DAPI=562.0
+Upper thresholds:  AF647=2998.2, AF488=1345.3, DAPI=1307.0
+    -> saved: merged_rgb/29-1_TR1.png
+  • Scene: TR4
+Otsu thresholds:   AF647=142.1, AF488=430.7, DAPI=668.1
+Upper thresholds:  AF647=2027.2, AF488=1413.8, DAPI=1585.5
+    -> saved: merged_rgb/29-1_TR4.png
+  • Scene: TR3
+Otsu thresholds:   AF647=108.4, AF488=421.4, DAPI=644.8
+Upper thresholds:  AF647=1337.7, AF488=1708.8, DAPI=1951.0
+    -> saved: merged_rgb/29-1_TR3.png
+  • Scene: TR6
+Otsu thresholds:   AF647=110.8, AF488=426.5, DAPI=640.2
+Upper thresholds:  AF647=1488.3, AF488=1366.0, DAPI=2046.7
+    -> saved: merged_rgb/29-1_TR6.png
+  • Scene: TR10
+Otsu thresholds:   AF647=116.8, AF488=394.5, DAPI=602.8
+Upper thresholds:  AF647=1308.9, AF488=1818.0, DAPI=1407.0
+    -> saved: merged_rgb/29-1_TR10.png
+  • Scene: TR7
+Otsu thresholds:   AF647=148.5, AF488=397.8, DAPI=488.8
+Upper thresholds:  AF647=1695.2, AF488=1232.0, DAPI=1932.6
+    -> saved: merged_rgb/29-1_TR7.png
+  • Scene: TR11
+Otsu thresholds:   AF647=109.7, AF488=400.4, DAPI=592.3
+Upper thresholds:  AF647=1395.0, AF488=1988.5, DAPI=1587.1
+    -> saved: merged_rgb/29-1_TR11.png
+  • Scene: TR9
+Otsu thresholds:   AF647=115.9, AF488=391.1, DAPI=588.1
+Upper thresholds:  AF647=1096.0, AF488=2188.8, DAPI=2940.0
+    -> saved: merged_rgb/29-1_TR9.png
+  • Scene: TR12
+Otsu thresholds:   AF647=105.4, AF488=410.9, DAPI=579.8
+Upper thresholds:  AF647=1456.2, AF488=3176.2, DAPI=1385.0
+    -> saved: merged_rgb/29-1_TR12.png
+  • Scene: TR8
+Otsu thresholds:   AF647=113.2, AF488=375.5, DAPI=531.6
+Upper thresholds:  AF647=1413.3, AF488=2004.0, DAPI=1980.0
+    -> saved: merged_rgb/29-1_TR8.png
+
+=== 22-2.czi ===
+  • Scene: TR4
+Otsu thresholds:   AF647=113.1, AF488=435.3, DAPI=699.3
+Upper thresholds:  AF647=1350.0, AF488=1250.9, DAPI=1568.0
+    -> saved: merged_rgb/22-2_TR4.png
+  • Scene: TR2
+Otsu thresholds:   AF647=112.9, AF488=415.8, DAPI=621.8
+Upper thresholds:  AF647=1769.8, AF488=1340.7, DAPI=1503.0
+    -> saved: merged_rgb/22-2_TR2.png
+  • Scene: TR3
+Otsu thresholds:   AF647=133.2, AF488=430.5, DAPI=679.2
+Upper thresholds:  AF647=2641.9, AF488=1195.0, DAPI=1621.0
+    -> saved: merged_rgb/22-2_TR3.png
+  • Scene: TR6
+Otsu thresholds:   AF647=133.7, AF488=411.3, DAPI=634.4
+Upper thresholds:  AF647=2402.5, AF488=1538.0, DAPI=7576.0
+    -> saved: merged_rgb/22-2_TR6.png
+  • Scene: TR5
+Otsu thresholds:   AF647=117.1, AF488=422.8, DAPI=686.3
+Upper thresholds:  AF647=1822.4, AF488=1378.0, DAPI=1632.0
+    -> saved: merged_rgb/22-2_TR5.png
+  • Scene: TR1
+Otsu thresholds:   AF647=122.5, AF488=397.6, DAPI=627.7
+Upper thresholds:  AF647=4814.4, AF488=1774.0, DAPI=2936.7
+    -> saved: merged_rgb/22-2_TR1.png
+  • Scene: TR9
+Otsu thresholds:   AF647=120.2, AF488=479.0, DAPI=910.8
+Upper thresholds:  AF647=1931.6, AF488=2854.8, DAPI=3349.8
+    -> saved: merged_rgb/22-2_TR9.png
+  • Scene: TR11
+Otsu thresholds:   AF647=124.5, AF488=495.4, DAPI=893.6
+Upper thresholds:  AF647=1564.0, AF488=1877.7, DAPI=2701.5
+    -> saved: merged_rgb/22-2_TR11.png
+  • Scene: TR10
+Otsu thresholds:   AF647=149.5, AF488=492.9, DAPI=724.9
+Upper thresholds:  AF647=3629.4, AF488=1704.8, DAPI=1673.0
+    -> saved: merged_rgb/22-2_TR10.png
+  • Scene: TR8
+Otsu thresholds:   AF647=129.0, AF488=927.2, DAPI=665.5
+Upper thresholds:  AF647=2197.6, AF488=4237.5, DAPI=4000.0
+    -> saved: merged_rgb/22-2_TR8.png
+  • Scene: TR7
+Otsu thresholds:   AF647=128.7, AF488=452.8, DAPI=6367.6
+Upper thresholds:  AF647=1872.4, AF488=5555.1, DAPI=16383.0
+    -> saved: merged_rgb/22-2_TR7.png
+
+=== 17-1.czi ===
+  • Scene: TR6
+Otsu thresholds:   AF647=171.7, AF488=455.6, DAPI=660.4
+Upper thresholds:  AF647=3092.1, AF488=1208.9, DAPI=2024.0
+    -> saved: merged_rgb/17-1_TR6.png
+  • Scene: TR2
+Otsu thresholds:   AF647=129.2, AF488=464.9, DAPI=709.5
+Upper thresholds:  AF647=1654.2, AF488=1457.3, DAPI=1816.0
+    -> saved: merged_rgb/17-1_TR2.png
+  • Scene: TR5
+Otsu thresholds:   AF647=144.5, AF488=480.8, DAPI=750.2
+Upper thresholds:  AF647=1625.0, AF488=2254.9, DAPI=1947.0
+    -> saved: merged_rgb/17-1_TR5.png
+  • Scene: TR1
+Otsu thresholds:   AF647=140.9, AF488=442.1, DAPI=635.6
+Upper thresholds:  AF647=1453.3, AF488=2459.0, DAPI=2161.0
+    -> saved: merged_rgb/17-1_TR1.png
+  • Scene: TR4
+Otsu thresholds:   AF647=148.7, AF488=506.0, DAPI=782.8
+Upper thresholds:  AF647=911.1, AF488=1539.1, DAPI=2236.7
+    -> saved: merged_rgb/17-1_TR4.png
+  • Scene: TR3
+Otsu thresholds:   AF647=160.4, AF488=478.8, DAPI=721.7
+Upper thresholds:  AF647=2236.1, AF488=1904.1, DAPI=1942.0
+    -> saved: merged_rgb/17-1_TR3.png
+  • Scene: TR8
+Otsu thresholds:   AF647=150.2, AF488=432.2, DAPI=638.5
+Upper thresholds:  AF647=1007.7, AF488=1481.1, DAPI=1706.0
+    -> saved: merged_rgb/17-1_TR8.png
+  • Scene: TR9
+Otsu thresholds:   AF647=150.1, AF488=440.8, DAPI=672.0
+Upper thresholds:  AF647=1916.2, AF488=1175.3, DAPI=4717.8
+    -> saved: merged_rgb/17-1_TR9.png
+  • Scene: TR12
+Otsu thresholds:   AF647=108.1, AF488=399.7, DAPI=545.4
+Upper thresholds:  AF647=1292.1, AF488=1115.3, DAPI=1188.0
+    -> saved: merged_rgb/17-1_TR12.png
+  • Scene: TR10
+Otsu thresholds:   AF647=124.1, AF488=413.4, DAPI=652.0
+Upper thresholds:  AF647=1008.8, AF488=1306.0, DAPI=1584.0
+    -> saved: merged_rgb/17-1_TR10.png
+  • Scene: TR11
+Otsu thresholds:   AF647=96.0, AF488=386.0, DAPI=599.9
+Upper thresholds:  AF647=2263.0, AF488=3332.8, DAPI=1471.0
+    -> saved: merged_rgb/17-1_TR11.png
+  • Scene: TR7
+Otsu thresholds:   AF647=129.6, AF488=424.1, DAPI=606.5
+Upper thresholds:  AF647=2054.0, AF488=1220.9, DAPI=1333.0
+    -> saved: merged_rgb/17-1_TR7.png
+
+=== 44-2.czi ===
+  • Scene: TR6
+Otsu thresholds:   AF647=1021.6, AF488=391.3, DAPI=543.4
+Upper thresholds:  AF647=5077.3, AF488=3576.0, DAPI=1498.0
+    -> saved: merged_rgb/44-2_TR6.png
+  • Scene: TR4
+Otsu thresholds:   AF647=707.9, AF488=410.9, DAPI=574.5
+Upper thresholds:  AF647=6107.1, AF488=4161.8, DAPI=1428.0
+    -> saved: merged_rgb/44-2_TR4.png
+  • Scene: TR5
+Otsu thresholds:   AF647=619.8, AF488=378.6, DAPI=587.5
+Upper thresholds:  AF647=9039.0, AF488=4518.0, DAPI=1858.0
+    -> saved: merged_rgb/44-2_TR5.png
+  • Scene: TR1
+Otsu thresholds:   AF647=107.2, AF488=383.2, DAPI=467.8
+Upper thresholds:  AF647=2977.9, AF488=3344.3, DAPI=1236.0
+    -> saved: merged_rgb/44-2_TR1.png
+  • Scene: TR3
+Otsu thresholds:   AF647=899.9, AF488=398.8, DAPI=547.2
+Upper thresholds:  AF647=6839.4, AF488=4160.8, DAPI=1363.0
+    -> saved: merged_rgb/44-2_TR3.png
+  • Scene: TR2
+Otsu thresholds:   AF647=910.9, AF488=369.8, DAPI=500.9
+Upper thresholds:  AF647=7634.7, AF488=4573.0, DAPI=1376.0
+    -> saved: merged_rgb/44-2_TR2.png
+
+=== 36-1.czi ===
+  • Scene: TR5
+Otsu thresholds:   AF647=118.3, AF488=407.8, DAPI=607.1
+Upper thresholds:  AF647=1445.2, AF488=1111.2, DAPI=1655.0
+    -> saved: merged_rgb/36-1_TR5.png
+  • Scene: TR4
+
+Otsu thresholds:   AF647=119.2, AF488=405.4, DAPI=633.3
+Upper thresholds:  AF647=1547.7, AF488=1446.4, DAPI=1539.0
+    -> saved: merged_rgb/36-1_TR4.png
+  • Scene: TR6
+Otsu thresholds:   AF647=116.5, AF488=403.0, DAPI=550.6
+Upper thresholds:  AF647=979.6, AF488=3415.0, DAPI=3045.0
+    -> saved: merged_rgb/36-1_TR6.png
+  • Scene: TR3
+Otsu thresholds:   AF647=118.6, AF488=402.9, DAPI=614.3
+Upper thresholds:  AF647=993.0, AF488=1029.0, DAPI=1189.0
+    -> saved: merged_rgb/36-1_TR3.png
+  • Scene: TR2
+Otsu thresholds:   AF647=119.1, AF488=379.3, DAPI=518.8
+Upper thresholds:  AF647=1893.2, AF488=1895.5, DAPI=3201.8
+    -> saved: merged_rgb/36-1_TR8.png
+  • Scene: TR9
+Otsu thresholds:   AF647=119.5, AF488=390.4, DAPI=532.3
+Upper thresholds:  AF647=1411.6, AF488=973.0, DAPI=1146.0
+    -> saved: merged_rgb/36-1_TR9.png
+  • Scene: TR7
+Otsu thresholds:   AF647=112.0, AF488=378.8, DAPI=514.7
+Upper thresholds:  AF647=2329.4, AF488=1779.4, DAPI=1417.0
+    -> saved: merged_rgb/36-1_TR7.png
+  • Scene: TR12
+Otsu thresholds:   AF647=123.6, AF488=402.6, DAPI=480.0
+Upper thresholds:  AF647=1615.3, AF488=1635.0, DAPI=3245.4
+    -> saved: merged_rgb/36-1_TR12.png
+  • Scene: TR11
+Otsu thresholds:   AF647=120.7, AF488=392.4, DAPI=7647.5
+Upper thresholds:  AF647=1931.7, AF488=1701.0, DAPI=16383.0
+    -> saved: merged_rgb/36-1_TR11.png
+  • Scene: TR10
+Otsu thresholds:   AF647=218.3, AF488=409.7, DAPI=550.3
+Upper thresholds:  AF647=2025.4, AF488=1284.0, DAPI=1338.0
+    -> saved: merged_rgb/36-1_TR10.png
+
+=== 32-2.czi ===
+  • Scene: TR5
+Otsu thresholds:   AF647=170.2, AF488=453.9, DAPI=735.2
+Upper thresholds:  AF647=4479.3, AF488=2977.7, DAPI=1740.0
+    -> saved: merged_rgb/32-2_TR5.png
+  • Scene: TR4
+Otsu thresholds:   AF647=110.8, AF488=457.0, DAPI=744.9
+Upper thresholds:  AF647=1694.3, AF488=1950.8, DAPI=3003.0
+    -> saved: merged_rgb/32-2_TR4.png
+  • Scene: TR1
+Otsu thresholds:   AF647=104.5, AF488=436.3, DAPI=631.5
+Upper thresholds:  AF647=979.1, AF488=1101.9, DAPI=1648.0
+    -> saved: merged_rgb/32-2_TR1.png
+  • Scene: TR2
+Otsu thresholds:   AF647=103.6, AF488=462.3, DAPI=740.5
+Upper thresholds:  AF647=943.0, AF488=1282.1, DAPI=1736.0
+    -> saved: merged_rgb/32-2_TR2.png
+  • Scene: TR3
+Otsu thresholds:   AF647=114.0, AF488=453.6, DAPI=751.3
+Upper thresholds:  AF647=1404.4, AF488=1432.8, DAPI=2072.0
+    -> saved: merged_rgb/32-2_TR3.png
+  • Scene: TR6
+Otsu thresholds:   AF647=656.8, AF488=919.3, DAPI=1932.9
+Upper thresholds:  AF647=3613.5, AF488=3642.6, DAPI=7073.0
+    -> saved: merged_rgb/32-2_TR6.png
+  • Scene: TR9
+Otsu thresholds:   AF647=120.1, AF488=520.0, DAPI=1108.3
+Upper thresholds:  AF647=2548.9, AF488=2574.0, DAPI=2382.0
+    -> saved: merged_rgb/32-2_TR9.png
+  • Scene: TR8
+Otsu thresholds:   AF647=125.0, AF488=499.1, DAPI=970.7
+Upper thresholds:  AF647=1534.1, AF488=1876.8, DAPI=1921.0
+    -> saved: merged_rgb/32-2_TR8.png
+  • Scene: TR7
+Otsu thresholds:   AF647=104.0, AF488=437.5, DAPI=829.5
+Upper thresholds:  AF647=2134.1, AF488=2634.1, DAPI=2485.9
+    -> saved: merged_rgb/32-2_TR7.png
+
+=== 30-2.czi ===
+  • Scene: TR4
+Otsu thresholds:   AF647=124.3, AF488=427.1, DAPI=693.0
+Upper thresholds:  AF647=1525.6, AF488=1081.4, DAPI=1590.0
+    -> saved: merged_rgb/30-2_TR4.png
+  • Scene: TR5
+Otsu thresholds:   AF647=126.7, AF488=415.3, DAPI=657.8
+Upper thresholds:  AF647=2875.1, AF488=1367.0, DAPI=1518.0
+    -> saved: merged_rgb/30-2_TR5.png
+  • Scene: TR2
+Otsu thresholds:   AF647=112.1, AF488=417.6, DAPI=660.9
+Upper thresholds:  AF647=2320.9, AF488=1618.1, DAPI=1623.0
+    -> saved: merged_rgb/30-2_TR2.png
+  • Scene: TR1
+Otsu thresholds:   AF647=90.4, AF488=410.6, DAPI=611.9
+Upper thresholds:  AF647=2344.1, AF488=1756.0, DAPI=1648.0
+    -> saved: merged_rgb/30-2_TR1.png
+  • Scene: TR3
+Otsu thresholds:   AF647=108.2, AF488=418.3, DAPI=697.1
+Upper thresholds:  AF647=1865.9, AF488=1424.0, DAPI=1862.0
+    -> saved: merged_rgb/30-2_TR3.png
+  • Scene: TR6
+Otsu thresholds:   AF647=127.9, AF488=425.3, DAPI=614.7
+Upper thresholds:  AF647=2330.4, AF488=1515.4, DAPI=1910.0
+    -> saved: merged_rgb/30-2_TR6.png
+  • Scene: TR7
+Otsu thresholds:   AF647=122.8, AF488=403.6, DAPI=544.0
+Upper thresholds:  AF647=1629.0, AF488=1418.2, DAPI=4725.1
+    -> saved: merged_rgb/30-2_TR7.png
+  • Scene: TR9
+Otsu thresholds:   AF647=126.1, AF488=428.6, DAPI=664.3
+Upper thresholds:  AF647=1853.3, AF488=2686.2, DAPI=1586.0
+    -> saved: merged_rgb/30-2_TR9.png
+  • Scene: TR8
+Otsu thresholds:   AF647=120.8, AF488=415.6, DAPI=2655.8
+Upper thresholds:  AF647=2291.4, AF488=1511.3, DAPI=16383.0
+    -> saved: merged_rgb/30-2_TR8.png
+
+=== 44-1.czi ===
+  • Scene: TR6
+Otsu thresholds:   AF647=116.8, AF488=441.4, DAPI=659.1
+Upper thresholds:  AF647=1323.8, AF488=1413.3, DAPI=1915.0
+    -> saved: merged_rgb/44-1_TR6.png
+  • Scene: TR5
+Otsu thresholds:   AF647=108.5, AF488=441.1, DAPI=729.3
+Upper thresholds:  AF647=1293.3, AF488=3434.7, DAPI=3167.0
+    -> saved: merged_rgb/44-1_TR5.png
+  • Scene: TR4
+Otsu thresholds:   AF647=122.9, AF488=463.9, DAPI=759.6
+Upper thresholds:  AF647=1260.0, AF488=1400.0, DAPI=1962.4
+    -> saved: merged_rgb/44-1_TR4.png
+  • Scene: TR3
+Otsu thresholds:   AF647=122.3, AF488=460.1, DAPI=749.8
+Upper thresholds:  AF647=1002.4, AF488=1748.7, DAPI=1727.0
+    -> saved: merged_rgb/44-1_TR3.png
+  • Scene: TR1
+Otsu thresholds:   AF647=152.2, AF488=481.1, DAPI=699.1
+Upper thresholds:  AF647=1603.9, AF488=3796.6, DAPI=2950.0
+    -> saved: merged_rgb/44-1_TR1.png
+  • Scene: TR2
+Otsu thresholds:   AF647=134.4, AF488=439.0, DAPI=8095.5
+Upper thresholds:  AF647=1553.7, AF488=2881.7, DAPI=16383.0
+    -> saved: merged_rgb/44-1_TR2.png
+  • Scene: TR12
+Otsu thresholds:   AF647=116.6, AF488=389.0, DAPI=501.7
+Upper thresholds:  AF647=3245.6, AF488=3276.6, DAPI=1439.0
+    -> saved: merged_rgb/44-1_TR12.png
+  • Scene: TR11
+Otsu thresholds:   AF647=111.3, AF488=393.7, DAPI=611.4
+Upper thresholds:  AF647=2058.0, AF488=2568.0, DAPI=2013.0
+    -> saved: merged_rgb/44-1_TR11.png
+  • Scene: TR10
+Otsu thresholds:   AF647=116.1, AF488=412.3, DAPI=644.7
+Upper thresholds:  AF647=2713.1, AF488=2604.4, DAPI=1587.0
+    -> saved: merged_rgb/44-1_TR10.png
+  • Scene: TR7
+Otsu thresholds:   AF647=129.3, AF488=408.8, DAPI=576.0
+Upper thresholds:  AF647=976.0, AF488=1645.7, DAPI=1310.0
+    -> saved: merged_rgb/44-1_TR7.png
+  • Scene: TR8
+Otsu thresholds:   AF647=112.3, AF488=408.9, DAPI=593.9
+Upper thresholds:  AF647=1357.2, AF488=1347.5, DAPI=1452.0
+    -> saved: merged_rgb/44-1_TR8.png
+  • Scene: TR9
+Otsu thresholds:   AF647=117.2, AF488=407.1, DAPI=614.2
+Upper thresholds:  AF647=1608.9, AF488=1401.0, DAPI=2156.1
+    -> saved: merged_rgb/44-1_TR9.png
+
+=== 43-1.czi ===
+  • Scene: TR4
+Otsu thresholds:   AF647=116.5, AF488=424.8, DAPI=664.9
+Upper thresholds:  AF647=1828.1, AF488=2985.6, DAPI=2595.5
+    -> saved: merged_rgb/43-1_TR4.png
+  • Scene: TR3
+Otsu thresholds:   AF647=123.1, AF488=437.3, DAPI=656.1
+Upper thresholds:  AF647=2589.7, AF488=2490.7, DAPI=1549.0
+    -> saved: merged_rgb/43-1_TR3.png
+  • Scene: TR2
+Otsu thresholds:   AF647=100.1, AF488=418.0, DAPI=595.5
+Upper thresholds:  AF647=1497.1, AF488=1790.4, DAPI=1499.0
+    -> saved: merged_rgb/43-1_TR2.png
+  • Scene: TR1
+Otsu thresholds:   AF647=123.1, AF488=422.7, DAPI=550.9
+Upper thresholds:  AF647=1726.5, AF488=3872.0, DAPI=2585.0
+    -> saved: merged_rgb/43-1_TR1.png
+  • Scene: TR6
+Otsu thresholds:   AF647=142.0, AF488=432.1, DAPI=608.5
+Upper thresholds:  AF647=1785.4, AF488=1732.1, DAPI=1425.0
+    -> saved: merged_rgb/43-1_TR6.png
+  • Scene: TR5
+Otsu thresholds:   AF647=111.6, AF488=427.1, DAPI=638.9
+Upper thresholds:  AF647=1398.8, AF488=1848.0, DAPI=1688.0
+    -> saved: merged_rgb/43-1_TR5.png
+  • Scene: TR9
+Otsu thresholds:   AF647=117.8, AF488=406.2, DAPI=588.3
+Upper thresholds:  AF647=1277.0, AF488=3011.0, DAPI=6757.0
+    -> saved: merged_rgb/43-1_TR9.png
+  • Scene: TR8
+Otsu thresholds:   AF647=113.3, AF488=393.2, DAPI=553.3
+Upper thresholds:  AF647=1319.8, AF488=1552.7, DAPI=1671.0
+    -> saved: merged_rgb/43-1_TR8.png
+  • Scene: TR11
+Otsu thresholds:   AF647=205.7, AF488=409.3, DAPI=620.0
+Upper thresholds:  AF647=5289.9, AF488=2115.0, DAPI=1929.0
+    -> saved: merged_rgb/43-1_TR11.png
+  • Scene: TR12
+Otsu thresholds:   AF647=113.6, AF488=421.9, DAPI=631.6
+Upper thresholds:  AF647=1193.5, AF488=2158.0, DAPI=4116.2
+
+    -> saved: merged_rgb/43-1_TR12.png
+  • Scene: TR7
+Otsu thresholds:   AF647=102.6, AF488=381.8, DAPI=544.7
+Upper thresholds:  AF647=1609.6, AF488=2069.9, DAPI=1445.0
+    -> saved: merged_rgb/43-1_TR7.png
+  • Scene: TR10
+Otsu thresholds:   AF647=106.4, AF488=412.3, DAPI=633.2
+Upper thresholds:  AF647=1507.6, AF488=1338.5, DAPI=1624.0
+    -> saved: merged_rgb/43-1_TR10.png
+
+=== 30-1.czi ===
+  • Scene: TR2
+Otsu thresholds:   AF647=141.5, AF488=382.1, DAPI=459.4
+Upper thresholds:  AF647=1898.8, AF488=1216.0, DAPI=1493.0
+    -> saved: merged_rgb/30-1_TR2.png
+  • Scene: TR6
+Otsu thresholds:   AF647=110.2, AF488=395.1, DAPI=7711.5
+Upper thresholds:  AF647=691.0, AF488=2283.4, DAPI=16383.0
+    -> saved: merged_rgb/30-1_TR6.png
+  • Scene: TR4
+Otsu thresholds:   AF647=106.6, AF488=375.3, DAPI=473.6
+Upper thresholds:  AF647=1118.9, AF488=1769.0, DAPI=1636.0
+    -> saved: merged_rgb/30-1_TR4.png
+  • Scene: TR5
+Otsu thresholds:   AF647=131.2, AF488=391.9, DAPI=6559.6
+Upper thresholds:  AF647=1264.8, AF488=1392.0, DAPI=16383.0
+    -> saved: merged_rgb/30-1_TR5.png
+  • Scene: TR1
+Otsu thresholds:   AF647=120.6, AF488=384.1, DAPI=493.0
+Upper thresholds:  AF647=855.8, AF488=1087.4, DAPI=1935.0
+    -> saved: merged_rgb/30-1_TR1.png
+  • Scene: TR3
+Otsu thresholds:   AF647=137.2, AF488=396.9, DAPI=480.0
+Upper thresholds:  AF647=1926.1, AF488=2410.9, DAPI=6662.0
+    -> saved: merged_rgb/30-1_TR3.png
+  • Scene: TR10
+Otsu thresholds:   AF647=117.6, AF488=406.8, DAPI=499.4
+Upper thresholds:  AF647=2011.6, AF488=2000.7, DAPI=1505.0
+    -> saved: merged_rgb/30-1_TR10.png
+  • Scene: TR11
+Otsu thresholds:   AF647=164.6, AF488=400.2, DAPI=483.1
+Upper thresholds:  AF647=2945.3, AF488=1464.6, DAPI=1426.0
+    -> saved: merged_rgb/30-1_TR11.png
+  • Scene: TR7
+Otsu thresholds:   AF647=129.3, AF488=391.6, DAPI=505.5
+Upper thresholds:  AF647=1206.0, AF488=1500.6, DAPI=1775.0
+    -> saved: merged_rgb/30-1_TR7.png
+  • Scene: TR12
+Otsu thresholds:   AF647=118.7, AF488=400.4, DAPI=468.9
+Upper thresholds:  AF647=1911.5, AF488=1520.9, DAPI=1192.4
+    -> saved: merged_rgb/30-1_TR12.png
+  • Scene: TR9
+Otsu thresholds:   AF647=106.9, AF488=375.0, DAPI=476.0
+Upper thresholds:  AF647=1756.8, AF488=1606.9, DAPI=1419.0
+    -> saved: merged_rgb/30-1_TR9.png
+  • Scene: TR8
+Otsu thresholds:   AF647=125.1, AF488=395.6, DAPI=493.9
+Upper thresholds:  AF647=2082.3, AF488=1434.6, DAPI=1293.0
+    -> saved: merged_rgb/30-1_TR8.png
+
+=== 49-2.czi ===
+  • Scene: TR4
+Otsu thresholds:   AF647=109.8, AF488=458.1, DAPI=745.0
+Upper thresholds:  AF647=1286.8, AF488=1204.6, DAPI=1679.2
+    -> saved: merged_rgb/49-2_TR4.png
+  • Scene: TR2
+Otsu thresholds:   AF647=169.8, AF488=448.1, DAPI=710.7
+Upper thresholds:  AF647=3048.4, AF488=2173.0, DAPI=1777.0
+    -> saved: merged_rgb/49-2_TR2.png
+  • Scene: TR3
+Otsu thresholds:   AF647=174.4, AF488=457.5, DAPI=714.4
+Upper thresholds:  AF647=3540.1, AF488=1188.0, DAPI=2189.0
+    -> saved: merged_rgb/49-2_TR3.png
+  • Scene: TR5
+Otsu thresholds:   AF647=102.7, AF488=481.8, DAPI=736.0
+Upper thresholds:  AF647=1680.7, AF488=2626.7, DAPI=11631.9
+    -> saved: merged_rgb/49-2_TR5.png
+  • Scene: TR1
+Otsu thresholds:   AF647=115.8, AF488=433.1, DAPI=686.2
+Upper thresholds:  AF647=1368.9, AF488=1209.0, DAPI=1735.0
+    -> saved: merged_rgb/49-2_TR1.png
+  • Scene: TR6
+Otsu thresholds:   AF647=106.9, AF488=454.7, DAPI=759.7
+Upper thresholds:  AF647=2461.4, AF488=2502.0, DAPI=2191.0
+    -> saved: merged_rgb/49-2_TR6.png
+  • Scene: TR10
+Otsu thresholds:   AF647=1197.8, AF488=414.0, DAPI=645.5
+Upper thresholds:  AF647=10034.2, AF488=5337.3, DAPI=1654.0
+    -> saved: merged_rgb/49-2_TR10.png
+  • Scene: TR11
+Otsu thresholds:   AF647=86.3, AF488=425.5, DAPI=653.8
+Upper thresholds:  AF647=3705.6, AF488=4490.4, DAPI=1976.3
+    -> saved: merged_rgb/49-2_TR11.png
+  • Scene: TR9
+Otsu thresholds:   AF647=1844.3, AF488=382.6, DAPI=7903.5
+Upper thresholds:  AF647=15987.3, AF488=8415.6, DAPI=16383.0
+    -> saved: merged_rgb/49-2_TR9.png
+  • Scene: TR8
+Otsu thresholds:   AF647=4191.7, AF488=352.0, DAPI=572.0
+Upper thresholds:  AF647=16383.0, AF488=5724.7, DAPI=1496.0
+    -> saved: merged_rgb/49-2_TR8.png
+  • Scene: TR7
+Otsu thresholds:   AF647=105.8, AF488=387.8, DAPI=559.9
+Upper thresholds:  AF647=2874.2, AF488=3678.2, DAPI=1949.0
+    -> saved: merged_rgb/49-2_TR7.png
+  • Scene: TR12
+Otsu thresholds:   AF647=1433.8, AF488=436.2, DAPI=648.4
+Upper thresholds:  AF647=9787.1, AF488=6408.5, DAPI=7217.6
+    -> saved: merged_rgb/49-2_TR12.png
+
+=== 42-1.czi ===
+  • Scene: TR6
+Otsu thresholds:   AF647=116.1, AF488=460.3, DAPI=755.8
+Upper thresholds:  AF647=1262.9, AF488=1446.2, DAPI=1862.0
+    -> saved: merged_rgb/42-1_TR6.png
+  • Scene: TR5
+Otsu thresholds:   AF647=121.0, AF488=474.5, DAPI=770.9
+Upper thresholds:  AF647=988.1, AF488=1269.0, DAPI=1571.0
+    -> saved: merged_rgb/42-1_TR5.png
+  • Scene: TR4
+Otsu thresholds:   AF647=123.5, AF488=475.6, DAPI=792.8
+Upper thresholds:  AF647=1097.8, AF488=1225.0, DAPI=2667.1
+    -> saved: merged_rgb/42-1_TR4.png
+  • Scene: TR3
+Otsu thresholds:   AF647=120.6, AF488=472.4, DAPI=780.6
+Upper thresholds:  AF647=1157.0, AF488=1381.2, DAPI=2300.0
+    -> saved: merged_rgb/42-1_TR3.png
+  • Scene: TR2
+Otsu thresholds:   AF647=136.3, AF488=486.5, DAPI=728.3
+Upper thresholds:  AF647=1326.9, AF488=1679.6, DAPI=2171.0
+    -> saved: merged_rgb/42-1_TR2.png
+  • Scene: TR1
+Otsu thresholds:   AF647=120.3, AF488=456.5, DAPI=703.6
+Upper thresholds:  AF647=995.9, AF488=1320.1, DAPI=2242.0
+    -> saved: merged_rgb/42-1_TR1.png
+  • Scene: TR12
+Otsu thresholds:   AF647=122.7, AF488=412.2, DAPI=480.0
+Upper thresholds:  AF647=2648.9, AF488=2432.0, DAPI=1382.0
+    -> saved: merged_rgb/42-1_TR12.png
+  • Scene: TR7
+Otsu thresholds:   AF647=112.5, AF488=386.7, DAPI=535.9
+Upper thresholds:  AF647=881.0, AF488=3430.4, DAPI=2496.9
+    -> saved: merged_rgb/42-1_TR7.png
+  • Scene: TR11
+Otsu thresholds:   AF647=111.4, AF488=399.5, DAPI=551.3
+Upper thresholds:  AF647=1480.0, AF488=1578.2, DAPI=1321.0
+    -> saved: merged_rgb/42-1_TR11.png
+  • Scene: TR10
+Otsu thresholds:   AF647=123.8, AF488=410.2, DAPI=594.2
+Upper thresholds:  AF647=1822.0, AF488=1631.2, DAPI=1563.0
+    -> saved: merged_rgb/42-1_TR10.png
+  • Scene: TR9
+Otsu thresholds:   AF647=110.2, AF488=409.0, DAPI=568.2
+Upper thresholds:  AF647=1188.6, AF488=2213.8, DAPI=2801.7
+    -> saved: merged_rgb/42-1_TR9.png
+  • Scene: TR8
+Otsu thresholds:   AF647=108.4, AF488=394.3, DAPI=544.0
+Upper thresholds:  AF647=1694.0, AF488=1590.9, DAPI=8368.8
+    -> saved: merged_rgb/42-1_TR8.png
