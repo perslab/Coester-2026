@@ -19,7 +19,6 @@ import statsmodels.api as sm
 import statsmodels.formula.api as smf
 import adjustText
 from scipy.stats import pearsonr, spearmanr
-os.chdir("/projects/perslab/people/qbx224/7plex_paper/atlas/")
 
 
 # In[2]:
@@ -84,7 +83,7 @@ C4_GROUP_COLORS = {
 # In[ ]:
 
 
-adata = ad.read_h5ad("/projects/perslab-AUDIT/data/human_hypomap_snRNAseq/copy_original/human_HYPOMAP_snRNASeq.h5ad")
+adata = ad.read_h5ad("human_HYPOMAP_snRNASeq.h5ad")
 adata
 
 
@@ -813,7 +812,7 @@ scdrs perform-downstream \
 # In[18]:
 
 
-drs = pd.read_csv("/projects/perslab/people/qbx224/7plex_paper/atlas/scDRS/Yengo_BMI.full_score.gz", sep="\t", index_col=0)
+drs = pd.read_csv("scDRS/Yengo_BMI.full_score.gz", sep="\t", index_col=0)
 drs
 
 
@@ -889,7 +888,7 @@ adata_candidates = [
 # Optional scDRS score file if scdrs_col is not already in adata.obs
 scdrs_score_candidates = [
     "Yengo_BMI.full_score.gz",
-    "/projects/perslab/people/qbx224/7plex_paper/atlas/scDRS/Yengo_BMI.full_score.gz",
+    "scDRS/Yengo_BMI.full_score.gz",
 ]
 
 # Glia background labels used earlier in your notebook
