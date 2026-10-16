@@ -16,7 +16,6 @@ import statsmodels.api as sm
 import statsmodels.formula.api as smf
 import adjustText
 from scipy.stats import pearsonr, spearmanr
-os.chdir("/projects/perslab/people/qbx224/7plex_paper/atlas/")
 
 
 # In[3]:
@@ -433,25 +432,6 @@ adata
 #adata.write("allgenes_bipca_annotated_APR02.h5ad")
 adata = sc.read("allgenes_bipca_annotated.h5ad", cache=True)
 adata
-
-
-# In[9]:
-
-
-adata.write_zarr("allgenes_bipca_annotated.zarr")
-
-
-# In[10]:
-
-
-adata.file.close()
-
-
-# In[4]:
-
-
-adata = ad.read_zarr("allgenes_bipca_annotated.zarr")
-#adata.file.close()
 
 
 # In[4]:
