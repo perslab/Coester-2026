@@ -3,7 +3,7 @@ library(Seurat)
 library(ggplot2)
 '%!in%' <- function(x,y)!('%in%'(x,y))
 options(future.globals.maxSize= 50*1024*1024^2)
-atlaspath <- "/projects/perslab/people/qbx224/7plex_paper/atlas/"
+atlaspath <- "/7plex_paper/atlas/"
 ###Load and transfer spatial data MOUSE HYPOTHALAMUS
 spatial_object <- qs::qread(paste0(atlaspath, "spatial_24_bipca_annotated.qs"))
 spatial_object <- JoinLayers(spatial_object)
