@@ -20,7 +20,6 @@ import adjustText
 from scipy.stats import pearsonr, spearmanr
 from scipy.stats import chi2_contingency
 from scipy import stats
-os.chdir("/projects/perslab/people/qbx224/7plex_paper/atlas/")
 
 
 # In[ ]:
@@ -106,7 +105,7 @@ print(combined_long)
 
 
 ###Read in the CELLECT results for all leiden resolutions
-df = pd.read_csv('/projects/perslab/people/qbx224/CELLECT/CELLECT-leiden/CELLECT-LDSC/results/prioritization.csv')
+df = pd.read_csv('CELLECT/CELLECT-leiden/CELLECT-LDSC/results/prioritization.csv')
 # rename the column
 df = df.rename(columns={"specificity_id": "resolution"})
 df = df.rename(columns={"annotation": "cluster"})
@@ -429,7 +428,7 @@ area_to_animals = {
     "PVH": [63, 75, 138, 97, 85, 88, 118, 69],
     "PVT": [53, 62, 41, 42, 25, 74, 54, 49],
 }
-cellect_df = pd.read_csv('/projects/perslab/people/qbx224/CELLECT/CELLECT-7plex/CELLECT-LDSC/results/prioritization.csv')
+cellect_df = pd.read_csv('/CELLECT/CELLECT-7plex/CELLECT-LDSC/results/prioritization.csv')
 cellect_df = cellect_df[cellect_df["specificity_id"]=="detailed"]
 # Z-score
 cellect_df["z"] = cellect_df["beta"] / cellect_df["beta_se"]
