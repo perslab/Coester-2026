@@ -16,7 +16,6 @@ import statsmodels.api as sm
 import statsmodels.formula.api as smf
 import adjustText
 from scipy.stats import pearsonr, spearmanr
-os.chdir("/projects/perslab/people/qbx224/7plex_paper/atlas/")
 
 
 # In[2]:
@@ -548,9 +547,9 @@ plt.savefig("Virus_pos_zscore_regional.pdf")
 # In[19]:
 
 
-spatial_calls = pd.read_csv("/projects/perslab/people/qbx224/projection_calls_spatial_o.csv", index_col=0)
+spatial_calls = pd.read_csv("projection_calls_spatial_o.csv", index_col=0)
 spatial_calls = spatial_calls.T #intersect between called tracings spatial x sn labeltransfer 0.4 cutoff
-spatial_calls_t = pd.read_csv("/projects/perslab/people/qbx224/cells_calls_spatial_o.csv", index_col=1)
+spatial_calls_t = pd.read_csv("cells_calls_spatial_o.csv", index_col=1)
 spatial_calls["total"] = spatial_calls_t["Freq"] #total numbers from seurat_merged$comp1 (filtered 0.4)
 # spatial_calls contains the number of positive cells for each projection and each cell type
 df_ratio = spatial_calls.div(spatial_calls["total"], axis=0) # relative values
@@ -658,9 +657,9 @@ plt.savefig("scatterplot_correlation_spatial_projection.pdf")
 # In[24]:
 
 
-spatial_calls = pd.read_csv("/projects/perslab/people/qbx224/projection_calls_spatial_z.csv", index_col=0)
+spatial_calls = pd.read_csv("projection_calls_spatial_z.csv", index_col=0)
 spatial_calls = spatial_calls.T #intersect between called tracings spatial x sn labeltransfer 0.4 cutoff
-spatial_calls_t = pd.read_csv("/projects/perslab/people/qbx224/cells_calls_spatial_z.csv", index_col=1)
+spatial_calls_t = pd.read_csv("cells_calls_spatial_z.csv", index_col=1)
 spatial_calls["total"] = spatial_calls_t["Freq"] #total numbers from seurat_merged$comp1 (filtered 0.4)
 # spatial_calls contains the number of positive cells for each projection and each cell type
 df_ratio = spatial_calls.div(spatial_calls["total"], axis=0) # relative values
@@ -766,9 +765,9 @@ plt.savefig("scatterplot_correlation_spatial_zscore.pdf")
 # In[29]:
 
 
-spatial_calls = pd.read_csv("/projects/perslab/people/qbx224/projection_calls_spatial_c.csv", index_col=0)
+spatial_calls = pd.read_csv("projection_calls_spatial_c.csv", index_col=0)
 spatial_calls = spatial_calls.T #intersect between called tracings spatial x sn labeltransfer 0.4 cutoff
-spatial_calls_t = pd.read_csv("/projects/perslab/people/qbx224/cells_calls_spatial_c.csv", index_col=1)
+spatial_calls_t = pd.read_csv("cells_calls_spatial_c.csv", index_col=1)
 spatial_calls["total"] = spatial_calls_t["Freq"] #total numbers from seurat_merged$comp1 (filtered 0.4)
 # spatial_calls contains the number of positive cells for each projection and each cell type
 df_ratio = spatial_calls.div(spatial_calls["total"], axis=0) # relative values
@@ -1506,9 +1505,9 @@ plt.show()
 # In[54]:
 
 
-spatial_calls = pd.read_csv("/projects/perslab/people/qbx224/projection_calls_spatial_z.csv", index_col=0)
+spatial_calls = pd.read_csv("projection_calls_spatial_z.csv", index_col=0)
 spatial_calls = spatial_calls.T #intersect between called tracings spatial x sn labeltransfer 0.4 cutoff
-spatial_calls_t = pd.read_csv("/projects/perslab/people/qbx224/cells_calls_spatial_z.csv", index_col=1)
+spatial_calls_t = pd.read_csv("cells_calls_spatial_z.csv", index_col=1)
 spatial_calls["total"] = spatial_calls_t["Freq"] #total numbers from seurat_merged$comp1 (filtered 0.4)
 # spatial_calls contains the number of positive cells for each projection and each cell type
 df_ratio = spatial_calls.div(spatial_calls["total"], axis=0) # relative values
