@@ -25,13 +25,6 @@ from bipca import plotting
 from bipca.utils import stabilize_matrix
 from bipca.experiments import new_svd as SVD
 from openTSNE import TSNE
-os.chdir("/projects/perslab/people/qbx224/7plex_paper/atlas/")
-
-
-# In[2]:
-
-
-os.chdir("/projects/perslab/people/qbx224/7plex_paper/bipca/")
 
 
 # In[3]:
@@ -39,12 +32,6 @@ os.chdir("/projects/perslab/people/qbx224/7plex_paper/bipca/")
 
 adata = sc.read_h5ad("7plex_raw_RNA_filtered.h5ad")
 adata
-
-
-# In[2]:
-
-
-os.chdir("/projects/perslab/people/qbx224/7plex_paper/atlas/")
 
 
 # In[5]:
@@ -243,7 +230,6 @@ print(adata.X[:5, :5].toarray())
 # In[14]:
 
 
-os.chdir("/projects/perslab/people/qbx224/7plex_paper/bipca/")
 metadata_df = pd.read_csv('7plex_metadata.csv', index_col=0)
 metadata_df = metadata_df[["minor.cell.type", "original.cell.type", "cellex.minor", "cellex.orig"]]
 metadata_df
@@ -252,7 +238,6 @@ metadata_df
 # In[15]:
 
 
-os.chdir("/projects/perslab/people/qbx224/7plex_paper/atlas/")
 adata.obs = adata.obs.join(metadata_df, how='left')
 adata.obs
 
@@ -307,7 +292,7 @@ adata
 # In[5]:
 
 
-os.environ['R_HOME'] = '/home/qbx224/.conda/envs/pca_env/lib/R'
+os.environ['R_HOME'] = '/.conda/envs/pca_env/lib/R'
 import logging
 import anndata2ri
 import rpy2.rinterface_lib.callbacks as rcb
@@ -437,7 +422,7 @@ print(adata.X[:5, :5].toarray())
 # In[4]:
 
 
-os.environ['R_HOME'] = '/home/qbx224/.conda/envs/pca_env/lib/R'
+os.environ['R_HOME'] = '/.conda/envs/pca_env/lib/R'
 import logging
 import anndata2ri
 import rpy2.rinterface_lib.callbacks as rcb
