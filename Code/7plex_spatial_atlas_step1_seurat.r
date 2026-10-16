@@ -8,8 +8,8 @@ library(scran)
 library(BiocParallel)
 '%!in%' <- function(x,y)!('%in%'(x,y))
 options(repr.plot.width = 12, repr.plot.height = 12)
-spatialpath <- "/projects/perslab/people/qbx224/7plex_paper/processed_data/"
-atlaspath <- "/projects/perslab/people/qbx224/7plex_paper/atlas/"
+spatialpath <- "/processed_data/"
+atlaspath <- "/atlas/"
 options(future.globals.maxSize= 50*1024*1024^2)
 
 resolve_save <- function(plot, path){
@@ -717,7 +717,7 @@ write.csv(df, "regions.csv", row.names=TRUE)
 
 write.csv(sn_object[[]], "7plex_region_labeltransfer_meta.csv", row.names=TRUE)
 
-spatial <- readRDS("/projects/perslab/people/jmg776/projects/DVC/analysis/revision/spatial_transcriptomics_dvc/processed_data/spatial_object_preprocessed+labelled.rds")
+spatial <- readRDS("spatial_object_preprocessed+labelled.rds")
 spatial
 
 resolve_plot_dark <- function(spatial_merged, fov, cols){
