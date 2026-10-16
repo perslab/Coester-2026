@@ -26,7 +26,7 @@ Seurat_large <- function(seurat_obj, split = "orig.ident", sct = F, res = 0.8, d
   seurat.integrated <- JoinLayers(seurat.integrated)
   return(seurat.integrated)
 }
-filepath <- "/projects/perslab/people/qbx224/7plex_paper/"
+filepath <- "/7plex_paper/"
 sn_object <- qs::qread(paste0(filepath, "7plex_reference_combined.qs"))
 sn_object <- Seurat_large(sn_object, split = "old.ident")
 qs::qsave(sn_object, paste0(filepath, "7plex_reference_combined_integrated.qs"))
