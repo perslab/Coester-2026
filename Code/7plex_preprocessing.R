@@ -1,6 +1,6 @@
 library(Seurat)
 library(data.table)
-filepath <- "/projects/perslab/people/qbx224/7plex_paper/"
+filepath <- ""
 all_genes <- data.table::fread(paste0(filepath, "gene_names.txt"), sep = "\t")
 all_genes <- as.matrix(all_genes) #32141
 filtered_genes <- data.table::fread(paste0(filepath, "filtered_gene_names.txt"), sep = "\t")
