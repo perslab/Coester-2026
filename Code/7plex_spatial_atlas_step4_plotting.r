@@ -8,8 +8,8 @@ library(tibble)
 library(irr)
 '%!in%' <- function(x,y)!('%in%'(x,y))
 options(repr.plot.width = 12, repr.plot.height = 12)
-spatialpath <- "/projects/perslab/people/qbx224/7plex_paper/processed_data/"
-atlaspath <- "/projects/perslab/people/qbx224/7plex_paper/atlas/"
+spatialpath <- "/processed_data/"
+atlaspath <- "/atlas/"
 options(future.globals.maxSize= 50*1024*1024^2)
 
 resolve_save <- function(plot, path){
