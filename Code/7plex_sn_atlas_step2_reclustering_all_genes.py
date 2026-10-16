@@ -28,13 +28,6 @@ from openTSNE import TSNE
 
 import statsmodels.stats.multitest as smm
 from scipy.stats import pearsonr, spearmanr
-os.chdir("/projects/perslab/people/qbx224/7plex_paper/atlas/")
-
-
-# In[2]:
-
-
-os.chdir("/projects/perslab/people/qbx224/7plex_paper/bipca/")
 
 
 # In[3]:
@@ -52,12 +45,6 @@ if gene in adata.var_names:
     print(f"✔️ Found {gene!r} in adata.var_names (n_vars = {adata.n_vars})")
 else:
     print(f"❌ {gene!r} NOT in adata.var_names (n_vars = {adata.n_vars})")
-
-
-# In[5]:
-
-
-os.chdir("/projects/perslab/people/qbx224/7plex_paper/atlas/")
 
 
 # In[8]:
@@ -275,7 +262,7 @@ adata
 # In[7]:
 
 
-os.environ['R_HOME'] = '/home/qbx224/.conda/envs/pca_env/lib/R'
+os.environ['R_HOME'] = '/.conda/envs/pca_env/lib/R'
 import logging
 import anndata2ri
 import rpy2.rinterface_lib.callbacks as rcb
@@ -349,7 +336,7 @@ adata
 # In[19]:
 
 
-os.environ['R_HOME'] = '/home/qbx224/.conda/envs/pca_env/lib/R'
+os.environ['R_HOME'] = '/.conda/envs/pca_env/lib/R'
 import logging
 import anndata2ri
 import rpy2.rinterface_lib.callbacks as rcb
