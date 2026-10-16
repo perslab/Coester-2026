@@ -14,11 +14,7 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import seaborn as sns
 import adjustText
-os.chdir("/maps/projects/perslab/people/qbx224/7plex_paper/2plex")
 from pathlib import Path
-
-outdir = Path("/maps/projects/perslab/people/qbx224/7plex_paper/2plex/")
-sc.settings.figdir = outdir  # <- controls where scanpy writes
 
 
 # In[2]:
@@ -104,7 +100,7 @@ adata
 # In[12]:
 
 
-os.environ['R_HOME'] = '/home/qbx224/.conda/envs/pca_env/lib/R'
+os.environ['R_HOME'] = '/.conda/envs/pca_env/lib/R'
 import logging
 import anndata2ri
 import rpy2.rinterface_lib.callbacks as rcb
