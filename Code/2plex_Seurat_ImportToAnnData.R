@@ -15,7 +15,6 @@ library(BiocParallel)
 library(Matrix)
 '%!in%' <- function(x,y)!('%in%'(x,y))
 options(repr.plot.width = 12, repr.plot.height = 12)
-setwd("/maps/projects/perslab/people/qbx224/7plex_paper/2plex")
 options(future.globals.maxSize= 50*1024*1024^2)
 
 
@@ -144,7 +143,7 @@ FeaturePlot(raw, features = "v36")
 # In[11]:
 
 
-ref <- qs::qread("/maps/projects/perslab/people/qbx224/7plex_paper/atlas/7plex_Seurat_bipca_annotated.qs")
+ref <- qs::qread("7plex_Seurat_bipca_annotated.qs")
 ref
 
 
@@ -316,8 +315,8 @@ FeaturePlot(raw, features = "v63")
 # In[10]:
 
 
-ref1 <- qs::qread("/maps/projects/perslab/people/qbx224/cagrisema_paper/dvc_neurons_mouse.qs")
-ref2 <- qs::qread("/maps/projects/perslab/people/qbx224/cagrisema_paper/dvc_glia_mouse.qs")
+ref1 <- qs::qread("dvc_neurons_mouse.qs")
+ref2 <- qs::qread("dvc_glia_mouse.qs")
 ref <- merge(ref1, ref2)
 rm(ref1, ref2)
 ref
@@ -452,7 +451,7 @@ sceasy::convertFormat(ref_slim, from="seurat", to="anndata",
 # In[24]:
 
 
-setwd("/maps/projects/perslab/people/qbx224/cellranger_ouputs_Aug2024/LPBN")
+setwd("cellranger_ouputs_Aug2024/LPBN")
 
 
 # In[37]:
@@ -602,7 +601,7 @@ raw
 # In[4]:
 
 
-ref <- qs::qread("/maps/projects/perslab/people/qbx224/7plex_paper/atlas/7plex_Seurat_bipca_annotated.qs")
+ref <- qs::qread("7plex_Seurat_bipca_annotated.qs")
 ref
 
 
