@@ -14,7 +14,6 @@ import seaborn as sns
 from scipy.sparse import csr_matrix
 from multiprocessing import Pool
 import matplotlib.pyplot as plt
-os.chdir("/projects/perslab/people/qbx224/7plex_paper/atlas/")
 
 
 # In[2]:
