@@ -4,8 +4,8 @@ library(ggplot2)
 '%!in%' <- function(x,y)!('%in%'(x,y))
 options(future.globals.maxSize= 5*1024*1024^2)
 ###Load and subset snSEQ data MOUSE HYPOTHALAMUS
-filepath <- "/projects/perslab/people/qbx224/7plex_paper/processed_data"
-sn_object <- qs::qread("/projects/perslab/people/qbx224/7plex_paper/atlas/7plex_bipca_n98.qs")
+filepath <- "/processed_data"
+sn_object <- qs::qread("/atlas/7plex_bipca_n98.qs")
 files <- list.files(path=filepath, recursive=F, pattern = "*transformed.qs")
 for (f in files) {
   if (file.exists(paste0(filepath,"/",substr(f,0,11),"_bipca.qs"))){#check if already processed previously
