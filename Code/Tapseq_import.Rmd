@@ -158,8 +158,7 @@ SCOP_rename_tapseq <- function(h5_cb, h5_cr, ind, sun, tapseq) {
 ```
 
 ```{r}
-#filepath <- "/projects/cbmr_shared/people/qbx224/"
-filepath <- "/Users/qbx224/Documents/RStudio/"
+filepath <- ""
 sun1 <- readRDS(paste0(filepath,"4plex/2023-03-28_brain_day1-day2-day3_rna-seurat.rds"))
 sun2 <- readRDS(paste0(filepath,"4plex/2023-03-28_brain_day4_rna-seurat.rds"))
 sun3 <- readRDS(paste0(filepath,"3plex/2023-06-16_brain_day1-day2-day3_rna-seurat.rds"))
@@ -414,7 +413,7 @@ C4_3 <- Read10X_h5(paste0(filepath,"3plex/C4_filtered_feature_bc_matrix.h5"))
 #sun3 _1 to _6
 #sun4 _1 to _3
 ##################################
-# mats <- Sys.glob(file.path("/projects/dylan/leptin_paper/sc_preprocessing/gex_counts/TAPSEQ", "D*L*", "outs/raw_feature_bc_matrix.h5"))[-10]
+# mats <- Sys.glob(file.path("sc_preprocessing/gex_counts/TAPSEQ", "D*L*", "outs/raw_feature_bc_matrix.h5"))[-10]
 # mats <- purrr::map(mats, ~Read10X_h5(.x))
 # Intersect_test(mats[[1]], A5_4, sun1, "1")
 # Intersect_test(mats[[2]], B5_4, sun1, "3")
@@ -498,7 +497,7 @@ qs::qsave(integrated, file = paste0(filepath,"7plex_integrated.qs"))
 
 
 ```{r}
-integrated <- qs::qread("/projects/bernd/Study4_viral_tracing/7plex_integrated.qs")
+integrated <- qs::qread("7plex_integrated.qs")
 tapseq <- subset(integrated, cells = Cells(integrated)[integrated@meta.data$old.ident %in% c("SI-TT-A5_sun1","SI-TT-A6_sun1", "SI-TT-B5_sun1", "SI-TT-B6_sun1", "SI-TT-C5_sun1", "SI-TT-C6_sun1", "SI-TT-D5_sun1", "SI-TT-F5_sun1", "SI-TT-D6_sun2")])
 gene <- c("Agrp", "Kiss1", "Npy", "Lepr", "Glp1r", "Pomc", "Tbx19", "Ghrh", "Sst", "Calcr", "Ramp3", "Htr2c", "Mc3r", "Mc4r", "Ghsr", "Nr5a1", "Socs3", "Fgfr1", "Insr", "Gipr", "v147")
 
