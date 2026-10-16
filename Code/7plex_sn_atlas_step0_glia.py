@@ -25,7 +25,6 @@ from bipca import plotting
 from bipca.utils import stabilize_matrix
 from bipca.experiments import new_svd as SVD
 from openTSNE import TSNE
-os.chdir("/projects/perslab/people/qbx224/7plex_paper/atlas/")
 
 
 # In[2]:
