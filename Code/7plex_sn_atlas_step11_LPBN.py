@@ -14,11 +14,7 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import seaborn as sns
 import adjustText
-os.chdir("/maps/projects/perslab/people/qbx224/7plex_paper/2plex")
 from pathlib import Path
-
-outdir = Path("/maps/projects/perslab/people/qbx224/7plex_paper/2plex/")
-sc.settings.figdir = outdir  # <- controls where scanpy writes
 
 
 # In[3]:
@@ -98,7 +94,7 @@ adata
 # In[12]:
 
 
-os.environ['R_HOME'] = '/home/qbx224/.conda/envs/pca_env/lib/R'
+os.environ['R_HOME'] = '.conda/envs/pca_env/lib/R'
 import logging
 import anndata2ri
 import rpy2.rinterface_lib.callbacks as rcb
@@ -191,7 +187,7 @@ ct_col    = 'detailed_celltype_annotation'
 score_col = 'score_detailed_celltype_annotation'
 
 adata_2p  = sc.read("HYP_integrated_LPBN_scran.h5ad")
-adata_ref = sc.read("/projects/perslab/people/qbx224/7plex_paper/atlas/allgenes_bipca_annotated.h5ad")
+adata_ref = sc.read("allgenes_bipca_annotated.h5ad")
 
 print(f"LPBN 2-plex: {adata_2p.n_obs} cells × {adata_2p.n_vars} genes")
 print(f"Atlas:       {adata_ref.n_obs} cells × {adata_ref.n_vars} genes")
@@ -1182,7 +1178,7 @@ from matplotlib.gridspec import GridSpec
 
 
 # ── 1. v147 snRNA projection scores (one row per area from per-area csvs) ────
-indir   = "/maps/projects/perslab/people/qbx224/7plex_paper/atlas/area_cellex_results"
+indir   = "area_cellex_results"
 records = []
 for fn in os.listdir(indir):
     if not fn.endswith("_detailed_cellex.csv"):
@@ -1200,7 +1196,7 @@ combined = (pd.DataFrame(records)
 print("snRNA areas:", combined.index.tolist())
 
 # ── 2. Spatial projection scores (p36/p147 genes → area labels) ──────────────
-indir        = "/maps/projects/perslab/people/qbx224/7plex_paper/atlas/area_cellex_results"
+indir        = "area_cellex_results"
 gene_area_map = {
     "spatial1": {"p36-NLS-Cre": "PAG", "p147-mCherry-2A-iCre": "BST"},
     "spatial2": {"p36-NLS-Cre": "PBN", "p147-mCherry-2A-iCre": "LHA"},
@@ -1352,13 +1348,6 @@ plt.show()
 
 
 # In[ ]:
-
-
-
-
-
-# In[ ]:
-
 
 
 
