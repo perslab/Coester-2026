@@ -19,7 +19,6 @@ import statsmodels.formula.api as smf
 import adjustText
 from scipy.stats import pearsonr, spearmanr
 from scipy.stats import chi2_contingency
-os.chdir("/projects/perslab/people/qbx224/7plex_paper/atlas/")
 import bipca
 from bipca import plotting
 from bipca.utils import stabilize_matrix
@@ -478,7 +477,7 @@ plt.show()
 # In[22]:
 
 
-os.environ['R_HOME'] = '/home/qbx224/.conda/envs/pca_env/lib/R'
+os.environ['R_HOME'] = '/.conda/envs/pca_env/lib/R'
 import logging
 import anndata2ri
 import rpy2.rinterface_lib.callbacks as rcb
