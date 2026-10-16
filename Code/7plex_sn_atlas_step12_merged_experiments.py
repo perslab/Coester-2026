@@ -14,11 +14,7 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import seaborn as sns
 import adjustText
-os.chdir("/projects/perslab/people/qbx224/7plex_paper/atlas/")
 from pathlib import Path
-
-outdir = Path("/projects/perslab/people/qbx224/7plex_paper/atlas/paper/")
-sc.settings.figdir = outdir  # <- controls where scanpy writes
 
 
 # In[4]:
@@ -59,7 +55,6 @@ import matplotlib.pyplot as plt
 import matplotlib.patheffects as pe
 from pathlib import Path
 
-os.chdir("/maps/projects/perslab/people/qbx224/7plex_paper/2plex")
 
 # ── 1. Load all three objects ─────────────────────────────────────────────────
 adata_2p    = sc.read_h5ad("HYP_integrated_2plex_scran.h5ad")
@@ -550,7 +545,6 @@ adata_merged
 # In[2]:
 
 
-os.chdir("/maps/projects/perslab/people/qbx224/7plex_paper/2plex")
 adata = sc.read("atlas_merged_NTS_LPBN_retro.h5ad", cache=True)
 adata
 
@@ -617,7 +611,6 @@ print(adata)
 # In[13]:
 
 
-os.chdir("/maps/projects/perslab/people/qbx224/7plex_paper/2plex")
 adata = sc.read("atlas_merged_NTS_LPBN_retro_scran.h5ad", cache=True)
 # Exclude LPBN retrograde dataset before scoring
 adata = adata[adata.obs["dataset"] != "LPBN retrograde (v36)"].copy()
@@ -747,7 +740,7 @@ sc.pl.embedding(
 
 
 ###prepare CELLEX inputs
-outdir = "/maps/projects/perslab/people/qbx224/7plex_paper/2plex/all_pickles"
+outdir = "all_pickles"
 os.makedirs(outdir, exist_ok=True)
 
 # Cell types to exclude from all areas
@@ -902,7 +895,7 @@ plt.savefig("ESmu_detailed_v147.pdf")
 
 
 # ── Load original 7plex results for comparison ────────────────────────────────
-orig_indir = "/projects/perslab/people/qbx224/7plex_paper/atlas/area_cellex_results"
+orig_indir = "area_cellex_results"
 
 records_orig = []
 for fn in os.listdir(orig_indir):
@@ -1171,7 +1164,6 @@ adata
 # In[22]:
 
 
-os.chdir("/maps/projects/perslab/people/qbx224/7plex_paper/2plex")
 adata = sc.read("atlas_merged_NTS_LPBN_retro_scran.h5ad", cache=True)
 
 
@@ -1203,12 +1195,6 @@ import scanpy as sc
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from scipy import sparse
-
-# Add custom script to path
-sys.path.insert(0, "/maps/projects/perslab/people/qbx224")
-from compute_esmu_single_gene import compute_esmu_single_gene
-
-os.chdir("/maps/projects/perslab/people/qbx224/7plex_paper/2plex")
 
 ct_col    = 'detailed_celltype_annotation'
 score_col = 'score_detailed_celltype_annotation'
