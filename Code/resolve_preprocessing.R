@@ -4,8 +4,8 @@ library(ggplot2)
 '%!in%' <- function(x,y)!('%in%'(x,y))
 options(future.globals.maxSize= 5*1024*1024^2)
 ###Preprocessing RESOLVE HYPOTHALAMUS
-filepath <- "/projects/perslab/people/qbx224/7plex_paper/resolve"
-savepath <- "/projects/perslab/people/qbx224/7plex_paper/processed_data"
+filepath <- "/resolve"
+savepath <- "/processed_data"
 files <- list.files(path=filepath, recursive=T, pattern = "*object_projection_call.qs")
 
 for (f in files) {
