@@ -14,11 +14,7 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import seaborn as sns
 import adjustText
-os.chdir("/maps/projects/perslab/people/qbx224/7plex_paper/2plex")
 from pathlib import Path
-
-outdir = Path("/maps/projects/perslab/people/qbx224/7plex_paper/2plex/")
-sc.settings.figdir = outdir  # <- controls where scanpy writes
 
 
 # In[7]:
@@ -111,7 +107,7 @@ adata
 # In[5]:
 
 
-os.environ['R_HOME'] = '/home/qbx224/.conda/envs/pca_env/lib/R'
+os.environ['R_HOME'] = '/.conda/envs/pca_env/lib/R'
 import logging
 import anndata2ri
 import rpy2.rinterface_lib.callbacks as rcb
@@ -220,7 +216,7 @@ lmx_types = ['04_Crnde_Lmx1a', '27_Lmx1a_Ttc6', '32_Gucy2c_Ttc6', '36_Ebf2_Crhbp
 
 # %% Cell 2 — Load data
 adata_2p = sc.read("HYP_integrated_2plex_scran.h5ad")
-adata_ref = sc.read("/projects/perslab/people/qbx224/7plex_paper/atlas/allgenes_bipca_annotated.h5ad")
+adata_ref = sc.read("allgenes_bipca_annotated.h5ad")
 
 print(f"2-plex: {adata_2p.n_obs} cells × {adata_2p.n_vars} genes")
 print(f"Atlas:  {adata_ref.n_obs} cells × {adata_ref.n_vars} genes")
@@ -610,8 +606,6 @@ plt.show()
 # In[16]:
 
 
-os.chdir("/projects/perslab/people/qbx224/7plex_paper/atlas/")
-
 # Use only highly variable genes
 adata_hvg = adata_ref[:, adata_ref.var['highly_deviant']].copy()
 
@@ -689,23 +683,15 @@ score_df = pd.DataFrame(index=combined.index, columns=cell_type_order, dtype=flo
 # In[17]:
 
 
-os.chdir("/maps/projects/perslab/people/qbx224/7plex_paper/2plex")
 # %% Cell 16 — Integrate DVC row into existing combined heatmap
-# ─── Run this cell AFTER you have computed score_df in your existing
-# ─── projection heatmap notebook. Paste this into that notebook.
 
 dvc_row = pd.read_csv('figures_dvc/DVC_heatmap_row.csv', index_col=0)
 dvc_aligned = dvc_row.reindex(columns=score_df.columns, fill_value=np.nan)
 score_df_ext = pd.concat([score_df, dvc_aligned])
-#
-# # Then re-run your imshow code replacing score_df with score_df_ext
-# # The DVC row will appear as the bottom row of the heatmap
 
 
 # In[18]:
 
-
-os.chdir("/projects/perslab/people/qbx224/7plex_paper/atlas/")
 single_dataset_regions = {'PVH'}  # only snRNA available, do not divide by 2
 
 for region in combined.index:
@@ -782,8 +768,6 @@ plt.show()
 
 # In[19]:
 
-
-os.chdir("/maps/projects/perslab/people/qbx224/7plex_paper/2plex")
 # %% Cell 17 — Anterograde composition (supplementary)
 fig, ax = plt.subplots(figsize=(6, 6))
 
