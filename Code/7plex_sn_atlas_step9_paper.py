@@ -14,11 +14,7 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import seaborn as sns
 import adjustText
-os.chdir("/projects/perslab/people/qbx224/7plex_paper/atlas/")
 from pathlib import Path
-
-outdir = Path("/projects/perslab/people/qbx224/7plex_paper/atlas/paper/")
-sc.settings.figdir = outdir  # <- controls where scanpy writes
 
 
 # In[3]:
@@ -3176,7 +3172,7 @@ plt.show()
 # In[11]:
 
 
-df_cellect = pd.read_csv('/projects/perslab/people/qbx224/CELLECT/CELLECT-ALLPLEX/CELLECT-LDSC/results/prioritization.csv')
+df_cellect = pd.read_csv('/CELLECT/CELLECT-ALLPLEX/CELLECT-LDSC/results/prioritization.csv')
 df_cellect["mlog10p"] = -np.log10(df_cellect["pvalue"])
 df_cellect["z"] = df_cellect["beta"] / df_cellect["beta_se"]
 df_cellect.to_csv('df_cellect.csv', index=False)
