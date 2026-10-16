@@ -1,10 +1,3 @@
----
-
-editor_options: 
-  markdown: 
-    wrap: 72
----
-
 # Analysis code: Coester et al. (2026)
 
 **Hypothalamic projection architecture links genetic risk for common obesity to *Lmx1a/b* neurons**
