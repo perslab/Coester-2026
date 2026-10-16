@@ -20,7 +20,6 @@ import adjustText
 from scipy.stats import pearsonr, spearmanr
 from scipy.stats import chi2_contingency
 from scipy import stats
-os.chdir("/projects/perslab/people/qbx224/7plex_paper/atlas/")
 import bipca
 from bipca import plotting
 from bipca.utils import stabilize_matrix
@@ -357,7 +356,7 @@ for res in leiden:
 # In[10]:
 
 
-df = pd.read_csv('/projects/perslab/people/qbx224/CELLECT/CELLECT-leiden/CELLECT-LDSC/results/prioritization.csv')
+df = pd.read_csv('/CELLECT/CELLECT-leiden/CELLECT-LDSC/results/prioritization.csv')
 df
 
 
@@ -410,7 +409,7 @@ sc.pl.embedding(adata,
 # In[13]:
 
 
-df = pd.read_csv('/projects/perslab/people/qbx224/CELLECT/CELLECT-leiden/CELLECT-LDSC/results/prioritization.csv')
+df = pd.read_csv('/CELLECT/CELLECT-leiden/CELLECT-LDSC/results/prioritization.csv')
 df["pvalue_BH"] = np.nan
 
 for col in leiden_cols:
@@ -1571,7 +1570,7 @@ for cl in top4_clusters:
 # In[12]:
 
 
-df_loo = pd.read_csv('/projects/perslab/people/qbx224/CELLECT/CELLECT-LOO/CELLECT-LDSC/results/prioritization.csv')
+df_loo = pd.read_csv('/CELLECT/CELLECT-LOO/CELLECT-LDSC/results/prioritization.csv')
 df_loo
 
 
@@ -1696,7 +1695,7 @@ for cl in top7:
 # In[17]:
 
 
-df = pd.read_csv('/projects/perslab/people/qbx224/CELLECT/CELLECT-LOO/CELLECT-LDSC/results/prioritization.csv')
+df = pd.read_csv('/CELLECT/CELLECT-LOO/CELLECT-LDSC/results/prioritization.csv')
 df["mlog10p"] = -np.log10(df["pvalue"])
 
 summary = (
@@ -1743,7 +1742,7 @@ plt.show()
 # In[19]:
 
 
-df_cellect = pd.read_csv('/projects/perslab/people/qbx224/CELLECT/CELLECT-LOO/CELLECT-LDSC/results/prioritization.csv')
+df_cellect = pd.read_csv('/CELLECT/CELLECT-LOO/CELLECT-LDSC/results/prioritization.csv')
 df_cellect["mlog10p"] = -np.log10(df_cellect["pvalue"])
 df_cellect
 
@@ -1921,7 +1920,7 @@ plt.show()
 # In[9]:
 
 
-df_cellect = pd.read_csv('/projects/perslab/people/qbx224/CELLECT/CELLECT-UKBB/CELLECT-LDSC/results/prioritization.csv')
+df_cellect = pd.read_csv('/CELLECT/CELLECT-UKBB/CELLECT-LDSC/results/prioritization.csv')
 df_cellect["mlog10p"] = -np.log10(df_cellect["pvalue"])
 df_cellect
 
